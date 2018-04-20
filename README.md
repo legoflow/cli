@@ -38,8 +38,6 @@ legoflow dev
 
 #### 构建
 
-在 legoflow 项目下，执行
-
 ```shell
 # 进入 legoflow 项目
 cd test
