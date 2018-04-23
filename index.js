@@ -5,43 +5,40 @@
 const program = require('commander');
 
 const initEngine = require('./core/init_engine');
-const buildConfig = require('./core/build_config');
-const util = require('legoflow-engine/util');
+const checkUpdate = require('./core/check_update');
+const workflow = require('./core/workflow');
 
-const { dev, build } = require('legoflow-engine');
+const util = require('legoflow-engine/util');
+const newProject = require('./core/new_project');
 
 const { version } = require('./package.json');
 
+global.print = require('./core/print');
+
 ( async ( ) => {
+    await checkUpdate( );
+
     await initEngine( );
 
     program
         .version( version )
         .description( 'LegoFlow CLI' )
-        .option('dev', 'Run dev workflow in folder', true )
-        .option('build', 'Run build workflow in folder', true )
-        .parse( process.argv );
 
-    const config = buildConfig( program );
+    program
+        .command( 'new' )
+        .description( 'New legoflow-project' )
+        .action( newProject )
 
-    if ( !config ) {
-        console.error( '找不到配置文件' );
+    program
+        .command( 'dev' )
+        .description( 'Run dev workflow in legoflow-project' )
+        .action( ( ) => workflow( 'dev' ) )
 
-        return void 0;
-    }
+    program
+        .command( 'build' )
+        .description( 'Run build workflow in legoflow-project' )
+        .action( ( ) => workflow( 'build' ) )
 
-    switch ( config.workflow ) {
-        case 'dev': {
-            dev( config );
-
-            break;
-        }
-        case 'build': {
-            build( config );
-
-            break;
-        }
-    }
-
+    program.parse( process.argv );
 } )( )
 
