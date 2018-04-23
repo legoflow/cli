@@ -15,7 +15,7 @@
 
 ## 依赖
 
-* Node.js >= 8
+* Node.js >= 8.x
 
 ## 安装
 
@@ -29,6 +29,12 @@ npm i legoflow-cli -g
 
 ```
 legoflow -h
+```
+
+#### 新建项目
+
+```
+legoflow new
 ```
 
 #### 开发
