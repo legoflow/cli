@@ -9,7 +9,6 @@ const checkUpdate = require('./core/check_update');
 const workflow = require('./core/workflow');
 
 const util = require('legoflow-engine/util');
-const newProject = require('./core/new_project');
 
 const { version } = require('./package.json');
 
@@ -26,17 +25,22 @@ global.print = require('./core/print');
 
     program
         .command( 'new' )
-        .description( 'New legoflow-project' )
-        .action( newProject )
+        .description( 'New project' )
+        .action( require('./core/new_project') )
+
+    program
+        .command( 'migrate:v2' )
+        .description( 'Migrate project to v2' )
+        .action( require('./core/migrate_v2') )
 
     program
         .command( 'dev' )
-        .description( 'Run dev workflow in legoflow-project' )
+        .description( 'Run dev workflow in project' )
         .action( ( ) => workflow( 'dev' ) )
 
     program
         .command( 'build' )
-        .description( 'Run build workflow in legoflow-project' )
+        .description( 'Run build workflow in project' )
         .action( ( ) => workflow( 'build' ) )
 
     program.parse( process.argv );
