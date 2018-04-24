@@ -3,7 +3,7 @@
 const path = require('path');
 const net = require('net');
 
-const port = 3100;
+const defaultPort = 3100;
 const defaultWebpackPort = 6700;
 
 const checkPortIsFree = ( port, callback ) => {
@@ -41,9 +41,9 @@ module.exports = async ( flag ) => {
         console.error( 'can not find free port for webpack.' );
     }
 
-    config.port = port;
+    config.port = global.__config.port || defaultPort;
     config.webpackPort = webpackPort;
-    config.autoOpenChrome = true;
+    config.autoOpenChrome = global.__config.autoOpenChrome || true;
 
     if ( flag === 'dev' ) {
         config.workflow = 'dev';

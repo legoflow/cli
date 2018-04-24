@@ -51,7 +51,7 @@ module.exports = async function ( ) {
     const options = {
         path: process.cwd( ),
         name, type, version, isESNext, isSourcePath,
-        author: '',
+        author: global.__config.user || '',
         c_version: `cli@${ c_version }`,
     }
 

@@ -55,6 +55,36 @@ cd test
 legoflow build
 ```
 
+#### 全局设置
+
+```shell
+# 设置参数
+legoflow set <name> <value>
+
+# 查看参数
+legoflow get <name>
+
+# 还原参数
+legoflow clean
+```
+
+[详细参数](https://github.com/legoflow/config)
+
+#### v1.x 项目迁移到 v2.x
+
+```shell
+cd test
+
+legoflow migrate:v2
+```
+
+**注意** 该功能只能把 v1.x 与 v2.x 都存在的功能进行迁移，若 2.x 摒弃的功能无法被迁移。例如：
+
+* v1.x 项目配置中的 `assets` 被迁移为 `workflow.build{ 'html.resourcesDomain' }`
+* v1.x 项目配置中的 `dist` / `vue@2.1` / ... 则无法被迁移
+
+具体功能对比可以参考 [这里](https://github.com/legoflow/legoflow/issues/12)
+
 ## 许可
 
 [MIT](./LICENSE)

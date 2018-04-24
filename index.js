@@ -8,6 +8,8 @@ const initEngine = require('./core/init_engine');
 const checkUpdate = require('./core/check_update');
 const workflow = require('./core/workflow');
 
+const globalConfog = require('./core/global_config');
+
 const util = require('legoflow-engine/util');
 
 const { version } = require('./package.json');
@@ -15,6 +17,7 @@ const { version } = require('./package.json');
 global.print = require('./core/print');
 
 ( async ( ) => {
+
     await checkUpdate( );
 
     await initEngine( );
@@ -27,6 +30,21 @@ global.print = require('./core/print');
         .command( 'new' )
         .description( 'New project' )
         .action( require('./core/new_project') )
+
+    program
+        .command( 'set <name> <value>' )
+        .description( 'Set config <name> <value>' )
+        .action( globalConfog.set )
+
+    program
+        .command( 'get <name>' )
+        .description( 'Get config <name>' )
+        .action( globalConfog.get )
+
+    program
+        .command( 'clean' )
+        .description( 'Clean config' )
+        .action( globalConfog.clean )
 
     program
         .command( 'migrate:v2' )
