@@ -25,19 +25,19 @@ npm i legoflow-cli -g
 
 ## 使用
 
-#### 查看命令
+### 查看命令
 
 ```
 legoflow -h
 ```
 
-#### 新建项目
+### 新建项目
 
 ```
 legoflow new
 ```
 
-#### 开发
+### 开发
 
 ```shell
 # 进入 legoflow 项目
@@ -46,7 +46,7 @@ cd test
 legoflow dev
 ```
 
-#### 构建
+### 构建
 
 ```shell
 # 进入 legoflow 项目
@@ -55,7 +55,7 @@ cd test
 legoflow build
 ```
 
-#### 全局设置
+### 全局设置
 
 ```shell
 # 设置参数
@@ -70,7 +70,7 @@ legoflow clean
 
 具体参数参考 [这里](https://github.com/legoflow/config)
 
-#### v1.x 项目迁移到 v2.x
+### v1.x 项目迁移到 v2.x
 
 ```shell
 cd test
