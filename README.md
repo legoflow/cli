@@ -68,7 +68,7 @@ legoflow get <name>
 legoflow clean
 ```
 
-[详细参数](https://github.com/legoflow/config)
+具体参数参考 [这里](https://github.com/legoflow/config)
 
 #### v1.x 项目迁移到 v2.x
 
@@ -83,7 +83,7 @@ legoflow migrate:v2
 * v1.x 项目配置中的 `assets` 被迁移为 `workflow.build{ 'html.resourcesDomain' }`
 * v1.x 项目配置中的 `dist` / `vue@2.1` / ... 则无法被迁移
 
-具体功能对比可以参考 [这里](https://github.com/legoflow/legoflow/issues/12)
+具体功能对比参考 [这里](https://github.com/legoflow/legoflow/issues/12)
 
 ## 许可
 
