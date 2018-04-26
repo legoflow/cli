@@ -11,5 +11,19 @@ module.exports = async ( flag ) => {
         return void 0;
     }
 
-    require('legoflow-engine')[ flag ]( config );
+    const engine = require('legoflow-engine');
+
+    const { Messager } = engine;
+
+    const { sender } = Messager;
+
+    Messager.sender = ( { type, msg } ) => {
+        if ( type === 'success' ) {
+            msg = flag.toUpperCase( );
+        }
+
+        sender( { type, msg } );
+    }
+
+    engine[ flag ]( config );
 };
