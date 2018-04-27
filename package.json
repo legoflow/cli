@@ -1,6 +1,6 @@
 {
   "name": "legoflow-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,8 @@
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "compare-versions": "^3.1.0",
+    "cross-port-killer": "^1.0.1",
+    "detect-port": "^1.2.2",
     "format-yaml": "^0.0.1",
     "fs-extra": "~5.0.0",
     "glob": "~7.1.2",

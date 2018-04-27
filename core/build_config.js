@@ -3,21 +3,26 @@
 const path = require('path');
 const net = require('net');
 
+const detect = require('detect-port');
+
 const defaultPort = 3100;
 const defaultWebpackPort = 6700;
 
 const checkPortIsFree = ( port, callback ) => {
     if ( port - defaultWebpackPort <= 10 ) {
-        const server = net.createServer().listen( port )
 
-        server.on( 'listening', ( ) => {
-            server.close( );
-            callback( port );
-        } )
+        detect( port, ( err, _port_ ) => {
+            if ( err ) {
+              console.log( err );
+            }
 
-        server.on( 'error', ( e ) => {
-            checkPortIsFree( port + 1, callback );
-        } )
+            if ( port == _port_ ) {
+                callback( port );
+            }
+            else {
+                checkPortIsFree( port + 1, callback );
+            }
+        } );
     }
     else {
         callback( false );

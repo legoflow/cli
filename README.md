@@ -85,6 +85,12 @@ legoflow migrate:v2
 
 具体功能对比参考 [这里](https://github.com/legoflow/legoflow/issues/12)
 
+### 关闭指定端口线程
+
+```shell
+legoflow kill:port 6701
+```
+
 ## 许可
 
 [MIT](./LICENSE)

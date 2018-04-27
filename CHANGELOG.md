@@ -2,6 +2,11 @@
 
 * [null]
 
+## 0.0.6 (April 27, 2018)
+
+* 修复 WebPack 端口检查递增
+* 增加 通过端口号关闭进程
+
 ## 0.0.5 (April 27, 2018)
 
 * 升级 Engine [v0.0.17](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0017-april-27-2018)
