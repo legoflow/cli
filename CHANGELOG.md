@@ -1,6 +1,11 @@
 ## Unreleased
 
-* 修复 新建项目未创建 "图片" 文件件
+* [null]
+
+## 0.0.5 (April 27, 2018)
+
+* 升级 Engine [v0.0.17](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0017-april-27-2018)
+* 修复 新建项目未创建 "图片" 文件夹
 
 ## 0.0.4 (April 26, 2018)
 

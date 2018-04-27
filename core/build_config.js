@@ -31,6 +31,12 @@ module.exports = async ( flag ) => {
 
     const config = projectPath.getConfig( { projectPath, root } );
 
+    if ( !config ) {
+        print.error( '找不到项目配置文件，请检查路径' );
+
+        return void 0;
+    }
+
     const webpackPort = await ( ( ) => {
         return new Promise( (resolve, reject) => {
             checkPortIsFree( defaultWebpackPort + 1, resolve );

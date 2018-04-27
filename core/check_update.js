@@ -24,6 +24,6 @@ module.exports = async ( ) => {
             )
         }
     } catch ( e ) {
-        console.error( 'can not check the version.', e );
+        console.error( '[CHECK UPDATE ERROR]', e );
     }
 };
