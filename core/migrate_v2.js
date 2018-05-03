@@ -33,6 +33,7 @@ module.exports = async function ( ) {
     const workflowBuildConfig = { };
 
     workflowBuildConfig[ 'html.resourcesDomain' ] = oldConfig.assets || '';
+    workflowBuildConfig[ 'css.resourcesDomain' ] = oldConfig[ 'assets.css' ] || '';
     workflowBuildConfig[ 'cache' ] = oldConfig.cache || '';
     workflowBuildConfig[ 'env' ] = oldConfig[ 'build.env' ] || '';
     workflowBuildConfig[ 'user.args' ] = oldConfig[ 'user.build.args' ] || { };

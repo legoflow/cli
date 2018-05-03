@@ -2,13 +2,17 @@
 
 * [null]
 
+## 2.0.0-beta.1 (May 3, 2018)
+
+* 升级 Engine [v0.0.18](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0018-may-3-2018)
+
 ## 2.0.0-beta.0 (April 28, 2018)
 
 * 同步公布 beta.0 版本
 
 ## 0.0.6 (April 27, 2018)
 
-* 修复 WebPack 端口检查递增
+* 修复 Webpack 端口检查递增
 * 增加 通过端口号关闭进程
 
 ## 0.0.5 (April 27, 2018)

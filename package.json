@@ -1,6 +1,6 @@
 {
   "name": "legoflow-cli",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.2",
-    "legoflow-engine": "0.0.17",
+    "legoflow-engine": "0.0.18",
     "legoflow-project": "0.0.4",
     "r2": "^2.0.1",
     "shelljs": "^0.7.8",
