@@ -3,6 +3,8 @@
 const buildConfig = require('./build_config');
 
 module.exports = async ( flag ) => {
+    console.log( `ℹ ｢wdm｣: launching ${ flag }` );
+
     const config = await buildConfig( flag );
 
     if ( !config ) {

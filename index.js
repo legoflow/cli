@@ -14,6 +14,7 @@ const globalConfog = require('./core/global_config');
 const { version } = require('./package.json');
 
 global.print = require('./core/print');
+global.util = require('legoflow-engine/util');
 
 ( async ( ) => {
     await checkUpdate( );

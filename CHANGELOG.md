@@ -2,6 +2,11 @@
 
 * [null]
 
+## 2.0.0-beta.2 (May 4, 2018)
+
+* 修复 工作流启动失败
+* 优化 v1 迁移功能 **migrate:v2**
+
 ## 2.0.0-beta.1 (May 3, 2018)
 
 * 升级 Engine [v0.0.18](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0018-may-3-2018)
