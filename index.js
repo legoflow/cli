@@ -4,6 +4,19 @@
 
 const program = require('commander');
 const chalk = require('chalk');
+const shell = require('shelljs');
+const compareVersion = require('compare-versions');
+
+global.print = require('./core/print');
+
+const nodeVersion = shell.exec( 'node --version', { silent: true } ).stdout;
+const mainVersion = nodeVersion.split( '.' )[ 0 ][ 1 ];
+
+if ( parseInt( mainVersion ) < 8 ) {
+    print.error( 'node.js version need to >= 8' );
+
+    return void 0;
+}
 
 const initEngine = require('./core/init_engine');
 const checkUpdate = require('./core/check_update');
@@ -13,7 +26,6 @@ const globalConfog = require('./core/global_config');
 
 const { version } = require('./package.json');
 
-global.print = require('./core/print');
 global.util = require('legoflow-engine/util');
 
 ( async ( ) => {
@@ -56,14 +68,16 @@ global.util = require('legoflow-engine/util');
         .action( killPort )
 
     program
-        .command( 'dev' )
+        .command( 'dev [env]' )
+        .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run dev workflow in project' ) )
-        .action( ( ) => workflow( 'dev' ) )
+        .action( ( env, cmd ) => workflow( 'dev', env, cmd ) )
 
     program
-        .command( 'build' )
+        .command( 'build <env>' )
+        .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run build workflow in project' ) )
-        .action( ( ) => workflow( 'build' ) )
+        .action( ( env, cmd ) => workflow( 'build', env, cmd ) )
 
     program.parse( process.argv );
 } )( )

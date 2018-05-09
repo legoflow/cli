@@ -44,6 +44,12 @@ legoflow new
 cd test
 
 legoflow dev
+
+# 可选择环境
+legoflow dev --env
+
+# 可指定环境
+legoflow dev test
 ```
 
 ### 构建
@@ -53,6 +59,12 @@ legoflow dev
 cd test
 
 legoflow build
+
+# 可选择环境
+legoflow build --env
+
+# 可指定环境
+legoflow build preview
 ```
 
 ### 全局设置
