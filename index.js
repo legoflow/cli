@@ -74,7 +74,7 @@ global.util = require('legoflow-engine/util');
         .action( ( env, cmd ) => workflow( 'dev', env, cmd ) )
 
     program
-        .command( 'build <env>' )
+        .command( 'build [env]' )
         .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run build workflow in project' ) )
         .action( ( env, cmd ) => workflow( 'build', env, cmd ) )
