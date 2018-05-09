@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const YAML = require('yamljs');
 const formatYamlFile = require('format-yaml');
+const { version: cliVersion } = require('../package.json');
 
 const CONFIG_MAPPING = {
     name: 'name',
@@ -62,6 +63,8 @@ module.exports = async function ( ) {
                 }
 
                 if ( attr === 'type' ) {
+                    _new.version = `cli-migrate@v2${ cliVersion }`;
+
                     _new.REM = value === 'mobile' ? true : false;
                 }
             }

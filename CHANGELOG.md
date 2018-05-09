@@ -2,6 +2,10 @@
 
 * [null]
 
+## 2.0.0-beta.5 (May 4, 2018)
+
+* 升级 Engine [v0.0.22](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0022-may-9-2018)
+
 ## 2.0.0-beta.2 (May 4, 2018)
 
 * 修复 工作流启动失败
