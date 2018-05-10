@@ -1,14 +1,12 @@
 'use strict';
 
-const project = require('legoflow-project');
 const prompt = require('inquirer').prompt;
-const newProject = require('legoflow-project');
-const getProjectType = require('legoflow-project/getProjectType');
+const legoflowProject = require('legoflow-project');
 
 const { version: c_version } = require('../package.json');
 
 module.exports = async function ( ) {
-    const types = Object.keys( getProjectType( ) );
+    const types = Object.keys( legoflowProject.getProjectType( ) );
 
     const questions = [
         {
@@ -55,7 +53,7 @@ module.exports = async function ( ) {
         c_version: `cli@${ c_version }`,
     }
 
-    const result = await newProject( options );
+    const result = await legoflowProject.new( options );
 
     typeof result !== 'string'  ? print.success( '新建成功' ) : print.error( result );
 };

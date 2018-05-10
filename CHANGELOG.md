@@ -2,7 +2,11 @@
 
 * [null]
 
-## 2.0.0-beta.6 (May 9, 2018)
+## 2.0.0-beta.8 (May 10, 2018)
+
+* 升级 Project，支持自定义项目类型
+
+## 2.0.0-beta.7 (May 9, 2018)
 
 * 增加 开发或构建时指定或选择环境
 * 升级 Engine [v0.0.22](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0022-may-9-2018)
