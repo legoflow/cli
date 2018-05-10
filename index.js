@@ -35,6 +35,7 @@ global.util = require('legoflow-engine/util');
 
     program
         .version( version )
+        .option('-v, --version', 'output the version number')
         .description( `${ chalk.blue.bold( 'LegoFlow CLI' ) }, ${ chalk.underline( 'https://legoflow.com' ) }` )
 
     program
