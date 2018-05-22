@@ -34,7 +34,7 @@ legoflow -h
 ### 新建项目
 
 ```
-legoflow new
+legoflow init
 ```
 
 ### 开发

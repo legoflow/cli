@@ -39,8 +39,8 @@ global.util = require('legoflow-engine/util');
         .description( `${ chalk.blue.bold( 'LegoFlow CLI' ) }, ${ chalk.underline( 'https://legoflow.com' ) }` )
 
     program
-        .command( 'new' )
-        .description( 'new project' )
+        .command( 'init' )
+        .description( 'init new project' )
         .action( require('./core/new_project') )
 
     program
