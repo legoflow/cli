@@ -37,6 +37,8 @@ module.exports = async ( flag, env, cmd ) => {
 
     console.log( `ℹ ｢wdm｣: launching ${ chalk.bold( flag ) }${ workflowConfig && workflowConfig.env ? `, env: ${ chalk.bold.underline( workflowConfig.env ) }` : '' }` );
 
+    config.friendlyErrors = true;
+
     const engine = require('legoflow-engine');
 
     const { Messager } = engine;
@@ -45,10 +47,11 @@ module.exports = async ( flag, env, cmd ) => {
 
     Messager.sender = ( { type, msg } ) => {
         if ( type === 'success' ) {
-            msg = flag.toUpperCase( );
+            print.success( 'started dev service' );
         }
-
-        sender( { type, msg } );
+        else {
+            sender( { type, msg } );
+        }
     }
 
     engine[ flag ]( config );
