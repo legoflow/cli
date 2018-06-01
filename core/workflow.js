@@ -39,6 +39,8 @@ module.exports = async ( flag, env, cmd ) => {
 
     config.friendlyErrors = true;
 
+    config.from = 'cli';
+
     const engine = require('legoflow-engine');
 
     const { Messager } = engine;
@@ -47,7 +49,7 @@ module.exports = async ( flag, env, cmd ) => {
 
     Messager.sender = ( { type, msg } ) => {
         if ( type === 'success' ) {
-            print.success( 'started dev service' );
+            print.success( flag === 'dev' ? 'started dev service' : 'build finish' );
         }
         else {
             sender( { type, msg } );
