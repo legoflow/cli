@@ -29,6 +29,12 @@ module.exports = async function ( ) {
             default: '0.0.1',
         },
         {
+            type: 'input',
+            name: 'description',
+            message: '项目描述',
+            default: '',
+        },
+        {
             type: 'list',
             name: 'isESNext',
             message: '是否使用 ES.Next',
@@ -44,13 +50,14 @@ module.exports = async function ( ) {
         },
     ];
 
-    const { name, type, version, isESNext, isSourcePath } = await prompt( questions );
+    const { name, type, version, isESNext, isSourcePath, description } = await prompt( questions );
 
     const options = {
         path: process.cwd( ),
         name, type, version, isESNext, isSourcePath,
         author: global.__config.user || '',
         c_version: `cli@${ c_version }`,
+        description,
     }
 
     const result = await legoflowProject.new( options );

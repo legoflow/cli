@@ -2,6 +2,11 @@
 
 * [null]
 
+## 2.0.0-beta.12 (June 4, 2018)
+
+* 升级 Engine [v0.0.30](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0030-june-4-2018)
+* 增加 Vue.ts 项目
+
 ## 2.0.0-beta.11 (May 22, 2018)
 
 * 升级 Engine [v0.0.25](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0025-may-22-2018)
