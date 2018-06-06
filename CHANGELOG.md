@@ -2,6 +2,10 @@
 
 * [null]
 
+## 2.0.0-beta.13 (June 4, 2018)
+
+* 更新 Project，脚手架项目接入 [Standard](https://standardjs.com/rules-zhcn.html) 标准
+
 ## 2.0.0-beta.12 (June 4, 2018)
 
 * 升级 Engine [v0.0.30](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0030-june-4-2018)
