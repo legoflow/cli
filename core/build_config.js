@@ -52,9 +52,11 @@ module.exports = async ( flag ) => {
         console.error( 'can not find free port for webpack.' );
     }
 
-    config.port = global.__config.port || defaultPort;
+    const { autoOpenChrome, port } = global.__config;
+
+    config.port = port || defaultPort;
     config.webpackPort = webpackPort;
-    config.autoOpenChrome = global.__config.autoOpenChrome || true;
+    config.autoOpenChrome = typeof autoOpenChrome !== 'undefined' ? autoOpenChrome : true ;
 
     if ( flag === 'dev' ) {
         config.workflow = 'dev';

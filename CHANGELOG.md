@@ -2,6 +2,11 @@
 
 * [null]
 
+## 2.0.0-beta.14 (June 7, 2018)
+
+* 修复 autoOpenChrome 问题
+* 更新 Engine [v0.0.31](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0031-june-7-2018)
+
 ## 2.0.0-beta.13 (June 4, 2018)
 
 * 更新 Project，脚手架项目接入 [Standard](https://standardjs.com/rules-zhcn.html) 标准

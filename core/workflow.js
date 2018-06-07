@@ -54,6 +54,10 @@ module.exports = async ( flag, env, cmd ) => {
         else {
             sender( { type, msg } );
         }
+
+        if ( type === 'stop' ) {
+            process.exit( 1 );
+        }
     }
 
     engine[ flag ]( config );
