@@ -8,6 +8,8 @@ const detect = require('detect-port');
 const defaultPort = 3100;
 const defaultWebpackPort = 6700;
 
+const localConfig = require('./local_config');
+
 const checkPortIsFree = ( port, callback ) => {
     if ( port - defaultWebpackPort <= 10 ) {
 
@@ -52,7 +54,7 @@ module.exports = async ( flag ) => {
         console.error( 'can not find free port for webpack.' );
     }
 
-    const { autoOpenChrome, port } = global.__config;
+    const { autoOpenChrome, port } = localConfig.get( );
 
     config.port = port || defaultPort;
     config.webpackPort = webpackPort;

@@ -22,7 +22,7 @@ const initEngine = require('./core/init_engine');
 const checkUpdate = require('./core/check_update');
 const workflow = require('./core/workflow');
 const killPort = require('./core/kill_port');
-const globalConfog = require('./core/global_config');
+const localConfig = require('./core/local_config');
 
 const { version } = require('./package.json');
 
@@ -46,17 +46,17 @@ global.util = require('legoflow-engine/util');
     program
         .command( 'set <name> <value>' )
         .description( 'set config <name> <value>' )
-        .action( globalConfog.set )
+        .action( localConfig.set )
 
     program
         .command( 'get <name>' )
         .description( 'get config <name>' )
-        .action( globalConfog.get )
+        .action( localConfig.get )
 
     program
         .command( 'clean' )
         .description( 'clean config' )
-        .action( globalConfog.clean )
+        .action( localConfig.clean )
 
     program
         .command( 'migrate:v2' )

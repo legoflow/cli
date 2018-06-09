@@ -2,6 +2,7 @@
 
 const prompt = require('inquirer').prompt;
 const legoflowProject = require('legoflow-project');
+const getConfig = require('./local_config').get;
 
 const { version: c_version } = require('../package.json');
 
@@ -55,7 +56,7 @@ module.exports = async function ( ) {
     const options = {
         path: process.cwd( ),
         name, type, version, isESNext, isSourcePath,
-        author: global.__config.user || '',
+        author: getConfig( 'user' ),
         c_version: `cli@${ c_version }`,
         description,
     }

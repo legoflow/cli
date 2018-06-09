@@ -4,9 +4,16 @@ const prompt = require('inquirer').prompt;
 const chalk = require('chalk');
 
 const buildConfig = require('./build_config');
+const getConfig = require('./local_config').get;
 
 module.exports = async ( flag, env, cmd ) => {
     const config = await buildConfig( flag );
+
+    const localUser = getConfig( 'user' );
+
+    if ( localUser ) {
+        config.user = localUser;
+    }
 
     if ( !config ) {
         console.error( '找不到配置文件' );
@@ -15,7 +22,14 @@ module.exports = async ( flag, env, cmd ) => {
     }
 
     if ( env && config.env ) {
-        config.env[ env ] ? config[ `workflow.${ flag }` ].env = env : print.error( `env<${ env }> undefined.` );
+        if ( !config.env[ env ] ) {
+            print.error( `env<${ env }> undefined.` );
+
+            return void 0;
+        }
+        else {
+            config[ `workflow.${ flag }` ].env = env;
+        }
     }
     else if ( !env && cmd.env && config.env && Object.keys( config.env ).length > 0 ) {
         const questions = [
@@ -37,7 +51,7 @@ module.exports = async ( flag, env, cmd ) => {
 
     console.log( `ℹ ｢wdm｣: launching ${ chalk.bold( flag ) }${ workflowConfig && workflowConfig.env ? `, env: ${ chalk.bold.underline( workflowConfig.env ) }` : '' }` );
 
-    config.friendlyErrors = true;
+    typeof config.friendlyErrors === 'undefined' && ( config.friendlyErrors = true );
 
     config.from = 'cli';
 
