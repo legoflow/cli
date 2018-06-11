@@ -29,12 +29,17 @@ npm i legoflow-cli -g
 
 ```
 legoflow -h
+
+lf -h
 ```
 
 ### 新建项目
 
-```
+```shell
 legoflow init
+
+# 使用简写
+lf init
 ```
 
 ### 开发
@@ -50,6 +55,9 @@ legoflow dev --env
 
 # 可指定环境
 legoflow dev test
+
+# 使用简写
+lf dev
 ```
 
 ### 构建
@@ -65,6 +73,9 @@ legoflow build --env
 
 # 可指定环境
 legoflow build preview
+
+# 使用简写
+lf build
 ```
 
 ### 全局设置
@@ -78,6 +89,9 @@ legoflow get <name>
 
 # 还原参数
 legoflow clean
+
+# 使用简写
+lf set <name> <value>
 ```
 
 具体参数参考 [这里](https://github.com/legoflow/config)

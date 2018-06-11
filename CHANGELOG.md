@@ -2,9 +2,10 @@
 
 * [null]
 
-## 2.0.0-beta.15 (June 8, 2018)
+## 2.0.0-beta.16 (June 11, 2018)
 
-* 升级 Engine [v0.0.32-beta.1](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0032-beta1-june-8-2018)
+* 升级 Engine [v0.0.32](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0032-june-11-2018)
+* 优化 Vue.ts 脚手架项目
 
 ## 2.0.0-beta.14 (June 7, 2018)
 
