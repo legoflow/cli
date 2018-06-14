@@ -14,7 +14,7 @@ module.exports = async ( ) => {
         if ( compareVersion( version, nowVersion ) > 0 ) {
             console.log(
                 boxen(
-                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update` ),
+                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update\nView Changelog ${ chalk.bold.yellow.underline( 'http://t.cn/RBXqa7b' ) }` ),
                     {
                         padding: { left: 1, right: 1 },
                         borderStyle: 'double',

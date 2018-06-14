@@ -4,16 +4,9 @@ const prompt = require('inquirer').prompt;
 const chalk = require('chalk');
 
 const buildConfig = require('./build_config');
-const getConfig = require('./local_config').get;
 
-module.exports = async ( flag, env, cmd ) => {
+module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
     const config = await buildConfig( flag );
-
-    const localUser = getConfig( 'user' );
-
-    if ( localUser ) {
-        config.user = localUser;
-    }
 
     if ( !config ) {
         console.error( '找不到配置文件' );

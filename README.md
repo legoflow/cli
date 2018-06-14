@@ -13,6 +13,10 @@
     <strong>命令行工具</strong>
 </p>
 
+## 最近更新
+
+**[CHANGELOG](./CHANGELOG.md)**
+
 ## 依赖
 
 * Node.js >= **8.x**

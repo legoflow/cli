@@ -2,6 +2,10 @@
 
 * [null]
 
+## 2.0.0-beta.17 (June 14, 2018)
+
+* 主要更新提供 CI 模块，支持持续构建
+
 ## 2.0.0-beta.16 (June 11, 2018)
 
 * 升级 Engine [v0.0.32](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0032-june-11-2018)

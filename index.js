@@ -9,15 +9,6 @@ const compareVersion = require('compare-versions');
 
 global.print = require('./core/print');
 
-const nodeVersion = shell.exec( 'node --version', { silent: true } ).stdout;
-const mainVersion = nodeVersion.split( '.' )[ 0 ][ 1 ];
-
-if ( parseInt( mainVersion ) < 8 ) {
-    print.error( 'node.js version need to >= 8' );
-
-    return void 0;
-}
-
 const initEngine = require('./core/init_engine');
 const checkUpdate = require('./core/check_update');
 const workflow = require('./core/workflow');
