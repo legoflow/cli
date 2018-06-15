@@ -59,6 +59,7 @@ module.exports = async function ( ) {
         author: getConfig( 'user' ),
         c_version: `cli@${ c_version }`,
         description,
+        from: 'cli',
     }
 
     const result = await legoflowProject.new( options );

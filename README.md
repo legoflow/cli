@@ -52,13 +52,13 @@ lf init
 # 进入 legoflow 项目
 cd test
 
-legoflow dev
+lf dev
 
 # 可选择环境
-legoflow dev --env
+lf dev --env
 
 # 可指定环境
-legoflow dev test
+lf dev test
 
 # 使用简写
 lf dev
@@ -70,32 +70,32 @@ lf dev
 # 进入 legoflow 项目
 cd test
 
-legoflow build
+lf build
 
 # 可选择环境
-legoflow build --env
+lf build --env
 
 # 可指定环境
-legoflow build preview
+lf build preview
+```
 
-# 使用简写
-lf build
+### 构建 dll
+
+```shell
+lf build:dll
 ```
 
 ### 全局设置
 
 ```shell
 # 设置参数
-legoflow set <name> <value>
+lf set <name> <value>
 
 # 查看参数
-legoflow get <name>
+lf get <name>
 
 # 还原参数
-legoflow clean
-
-# 使用简写
-lf set <name> <value>
+lf clean
 ```
 
 具体参数参考 [这里](https://github.com/legoflow/config)
@@ -105,7 +105,7 @@ lf set <name> <value>
 ```shell
 cd test
 
-legoflow migrate:v2
+lf migrate:v2
 ```
 
 **注意** 该功能只能把 v1.x 与 v2.x 都存在的功能进行迁移，若 2.x 摒弃的功能无法被迁移。例如：
@@ -118,7 +118,7 @@ legoflow migrate:v2
 ### 关闭指定端口线程
 
 ```shell
-legoflow kill:port 6701
+lf kill:port 6701
 ```
 
 ## 许可

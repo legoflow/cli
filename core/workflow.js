@@ -48,9 +48,7 @@ module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
 
     config.from = 'cli';
 
-    const engine = require('legoflow-engine');
-
-    const { Messager } = engine;
+    const Messager = require('legoflow-engine/messager');
 
     const { sender } = Messager;
 
@@ -67,5 +65,5 @@ module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
         }
     }
 
-    engine[ flag ]( config );
+    require(`legoflow-engine/${ flag }`)( config );
 };

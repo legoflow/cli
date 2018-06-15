@@ -1,6 +1,7 @@
 ## Unreleased
 
-* [null]
+* 升级 Engine [v0.0.34](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0034-june-15-2018)
+* 优化 升级提示逻辑
 
 ## 2.0.0-beta.17 (June 14, 2018)
 

@@ -3,9 +3,7 @@
   "version": "2.0.0-beta.17",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/legoflow/legoflow-cli.git"
@@ -34,8 +32,8 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.7",
-    "legoflow-engine": "0.0.32",
-    "legoflow-project": "0.0.17",
+    "legoflow-engine": "0.0.34",
+    "legoflow-project": "0.0.20",
     "r2": "^2.0.1",
     "shelljs": "^0.7.8",
     "yamljs": "^0.3.0",

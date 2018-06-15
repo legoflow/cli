@@ -4,8 +4,6 @@
 
 const program = require('commander');
 const chalk = require('chalk');
-const shell = require('shelljs');
-const compareVersion = require('compare-versions');
 
 global.print = require('./core/print');
 
@@ -20,10 +18,6 @@ const { version } = require('./package.json');
 global.util = require('legoflow-engine/util');
 
 ( async ( ) => {
-    await checkUpdate( );
-
-    await initEngine( );
-
     program
         .version( version )
         .option('-v, --version', 'output the version number')
@@ -63,13 +57,30 @@ global.util = require('legoflow-engine/util');
         .command( 'dev [env]' )
         .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run dev workflow in project' ) )
-        .action( ( env, cmd ) => workflow( 'dev', env, cmd ) )
+        .action(
+            ( env, cmd ) => checkUpdate( )
+                                .then( initEngine )
+                                .then( ( ) => workflow( 'dev', env, cmd ) )
+        )
 
     program
         .command( 'build [env]' )
         .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run build workflow in project' ) )
-        .action( ( env, cmd ) => workflow( 'build', env, cmd ) )
+        .action(
+            ( env, cmd ) => checkUpdate( )
+                                .then( initEngine )
+                                .then( ( ) => workflow( 'build', env, cmd ) )
+        )
+
+    program
+        .command( 'build:dll' )
+        .description( chalk.yellow( 'run build dll' ) )
+        .action(
+            ( env, cmd ) => checkUpdate( )
+                                .then( initEngine )
+                                .then( ( ) => workflow( 'dll', env, cmd ) )
+        )
 
     program.parse( process.argv );
 } )( )
