@@ -2,7 +2,7 @@
 
 * [null]
 
-## 2.0.0-beta.18 (June 14, 2018)
+## 2.0.0-beta.18 (June 19, 2018)
 
 * 升级 Engine [v0.0.37](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0037-june-19-2018)
 * 优化 升级提示逻辑
