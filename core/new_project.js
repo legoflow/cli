@@ -1,5 +1,6 @@
 'use strict';
 
+const chalk = require('chalk');
 const prompt = require('inquirer').prompt;
 const legoflowProject = require('legoflow-project');
 const getConfig = require('./local_config').get;
@@ -9,12 +10,54 @@ const { version: c_version } = require('../package.json');
 module.exports = async function ( ) {
     const types = Object.keys( legoflowProject.getProjectType( ) );
 
-    const questions = [
+    const toSpace = ( str ) => {
+        return str + ( Array( 8 > str.length ? 8 - str.length + 1 || 0 : 0 ).join( ' ' )  );
+    }
+
+    types.forEach( ( item, index ) => {
+        switch ( item ) {
+            case 'Vue.js': {
+                types[ index ] = {
+                    name: `${ chalk.bold( toSpace( item ) ) }${ chalk.whiteBright( '- Vue.js 项目基础模板' ) }`,
+                    value: item,
+                };
+                break;
+            }
+            case 'Vue.ts': {
+                types[ index ] = {
+                    name: `${ chalk.bold( toSpace( item ) ) }${ chalk.whiteBright( '- Vue.js 项目 TypeScript 模板' ) }`,
+                    value: item,
+                };
+                break;
+            }
+            case 'PC': {
+                types[ index ] = {
+                    name: `${ chalk.bold( toSpace( item ) ) }${ chalk.whiteBright( '- PC 端项目模板' ) }`,
+                    value: item,
+                };
+                break;
+            }
+            case 'Mobile': {
+                types[ index ] = {
+                    name: `${ chalk.bold( toSpace( item ) ) }${ chalk.whiteBright( '- 移动端项目模板' ) }`,
+                    value: item,
+                };
+                break;
+            }
+        }
+    } );
+
+    let questions = [
         {
             type: 'input',
             name: 'name',
             message: '项目名称',
             default: '',
+            validate ( input ) {
+                const done = this.async( );
+
+                !input ? done( '项目名称不能为空' ) : done( null, true );
+            },
         },
         {
             type: 'list',
@@ -37,13 +80,6 @@ module.exports = async function ( ) {
         },
         {
             type: 'list',
-            name: 'isESNext',
-            message: '是否使用 ES.Next',
-            choices: [ { name: 'yes', value: true }, { name: 'no', value: false } ],
-            default: 0,
-        },
-        {
-            type: 'list',
             name: 'isSourcePath',
             message: '是否作为源路径',
             choices: [ { name: 'no', value: false }, { name: 'yes', value: true } ],
@@ -51,7 +87,9 @@ module.exports = async function ( ) {
         },
     ];
 
-    const { name, type, version, isESNext, isSourcePath, description } = await prompt( questions );
+    const { name, type, version, description, isSourcePath } = await prompt( questions );
+
+    const isESNext = true;
 
     const options = {
         path: process.cwd( ),
