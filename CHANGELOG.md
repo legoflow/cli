@@ -1,7 +1,12 @@
 ## Unreleased
 
-* 升级 Engine [v0.0.34](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0034-june-15-2018)
+* [null]
+
+## 2.0.0-beta.18 (June 14, 2018)
+
+* 升级 Engine [v0.0.37](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0037-june-19-2018)
 * 优化 升级提示逻辑
+* 升级 Project，Vue.js 脚手架改为采用 Webpack Mode 形式
 
 ## 2.0.0-beta.17 (June 14, 2018)
 
