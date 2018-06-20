@@ -1,5 +1,8 @@
 ## Unreleased
 
+## 2.0.0-beta.19 (June 20, 2018)
+
+* 升级 Engine [v0.0.38](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0038-june-20-2018)
 * 优化 新建项目提问
 * 修复 `build:dll` `env<[object Object]> undefined` 问题
 * 修复 端口被占用问题
