@@ -37,9 +37,17 @@ module.exports = async ( flag ) => {
     const { autoOpenChrome, port, user } = localConfig.get( );
 
     config.user = user;
-    config.port = port || defaultPort;
+    config.port = parseInt( port || defaultPort );
     config.webpackPort = webpackPort;
     config.autoOpenChrome = typeof autoOpenChrome !== 'undefined' ? autoOpenChrome : true ;
+
+    config.port = await ( ( ) => {
+        return new Promise( ( resolve, reject ) => {
+            findFreePort( config.port, config.port + 10,  ( err, freePort ) => {
+                resolve( freePort );
+            } );
+        } )
+    } )( );
 
     if ( flag === 'dev' ) {
         config.workflow = 'dev';

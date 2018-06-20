@@ -1,6 +1,8 @@
 ## Unreleased
 
-* 优化 新建项目的提问问题
+* 优化 新建项目提问
+* 修复 `build:dll` `env<[object Object]> undefined` 问题
+* 修复 端口被占用问题
 
 ## 2.0.0-beta.18 (June 19, 2018)
 

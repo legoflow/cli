@@ -58,9 +58,11 @@ global.util = require('legoflow-engine/util');
         .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run dev workflow in project' ) )
         .action(
-            ( env, cmd ) => checkUpdate( )
-                                .then( initEngine )
-                                .then( ( ) => workflow( 'dev', env, cmd ) )
+            ( env, cmd ) => {
+                checkUpdate( )
+                    .then( initEngine )
+                    .then( ( ) => workflow( 'dev', env, cmd ) )
+            }
         )
 
     program
@@ -68,18 +70,22 @@ global.util = require('legoflow-engine/util');
         .option('-e, --env', 'env list')
         .description( chalk.yellow( 'run build workflow in project' ) )
         .action(
-            ( env, cmd ) => checkUpdate( )
-                                .then( initEngine )
-                                .then( ( ) => workflow( 'build', env, cmd ) )
+            ( env, cmd ) => {
+                checkUpdate( )
+                    .then( initEngine )
+                    .then( ( ) => workflow( 'build', env, cmd ) )
+            }
         )
 
     program
         .command( 'build:dll' )
         .description( chalk.yellow( 'run build dll' ) )
         .action(
-            ( env, cmd ) => checkUpdate( )
-                                .then( initEngine )
-                                .then( ( ) => workflow( 'dll', env, cmd ) )
+            ( cmd ) => {
+                checkUpdate( )
+                    .then( initEngine )
+                    .then( ( ) => workflow( 'dll', void 0, cmd ) )
+            }
         )
 
     program.parse( process.argv );
