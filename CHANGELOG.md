@@ -4,7 +4,7 @@
 
 ## 2.0.0-beta.20 (June 22, 2018)
 
-* 增加 **lf:eslint** 调用 ESLint CLI 模块
+* 增加 **lf:eslint** 调用 [ESLint 模块](http://eslint.cn/docs/user-guide/command-line-interface)
 * 更新 Engine [v0.0.39](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0039-june-22-2018)
 
 ## 2.0.0-beta.19 (June 20, 2018)
