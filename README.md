@@ -59,9 +59,6 @@ lf dev --env
 
 # 可指定环境
 lf dev test
-
-# 使用简写
-lf dev
 ```
 
 ### 构建
@@ -119,6 +116,18 @@ lf migrate:v2
 
 ```shell
 lf kill:port 6701
+```
+
+### 调用内置 ESLint 模块
+
+通过该命令可调用内置的 [ESLint 模块](http://eslint.cn/docs/user-guide/command-line-interface)
+
+```shell
+lf:eslint
+
+lf:eslint -v
+lf:eslint -h
+lf:eslint ...
 ```
 
 ## 许可
