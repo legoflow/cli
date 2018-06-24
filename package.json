@@ -1,6 +1,6 @@
 {
   "name": "legoflow-cli",
-  "version": "2.0.0-beta.20",
+  "version": "2.0.0-beta.21",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -18,8 +18,8 @@
     "legoflow": "./index.js",
     "legoflow-ci": "./ci.js",
     "lf": "./index.js",
-    "lf:eslint": "./node_modules/.bin/eslint",
-    "legoflow:eslint": "./node_modules/.bin/eslint"
+    "lf:eslint": "./node_modules/eslint/bin/eslint.js",
+    "legoflow:eslint": "./node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "boxen": "^1.3.0",
