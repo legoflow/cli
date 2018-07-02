@@ -34,7 +34,7 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.7",
-    "legoflow-engine": "0.0.42",
+    "legoflow-engine": "0.0.43-beta.2",
     "legoflow-project": "0.0.21",
     "r2": "^2.0.1",
     "shelljs": "^0.7.8",

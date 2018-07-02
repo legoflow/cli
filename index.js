@@ -88,5 +88,10 @@ global.util = require('legoflow-engine/util');
             }
         )
 
+    program.on( 'command:*', function ( ) {
+        console.log( chalk.yellow( `! Command not found. Please try to use ${ chalk.yellow.bold( '-h' ) }` ) );
+        process.exit( 1 );
+    } )
+
     program.parse( process.argv );
 } )( )
