@@ -10,7 +10,7 @@ const CONFIG_MAPPING = {
     name: 'name',
     type: 'type',
     es6: 'ES.Next',
-    hot: 'hot',
+    hot: '$workflow.dev$hot.reload',
     alias: 'alias',
     global: 'global',
     externals: 'externals',
