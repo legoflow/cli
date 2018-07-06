@@ -1,6 +1,6 @@
 ## Unreleased
 
-* [null]
+* 增加 动态更新超时提示
 
 ## 2.0.0-beta.25 (July 6, 2018)
 
