@@ -1,6 +1,6 @@
 'use strict';
 
-const r2 = require('r2');
+const axios = require('axios');
 const chalk = require('chalk');
 const boxen = require('boxen');
 const compareVersion = require('compare-versions');
@@ -9,7 +9,7 @@ const { version: nowVersion } = require('../package.json');
 
 module.exports = async ( ) => {
     try {
-        const { version } = JSON.parse( await r2( 'https://raw.githubusercontent.com/legoflow/legoflow-cli/master/package.json' ).text );
+        const { version } = (await axios( 'https://raw.githubusercontent.com/legoflow/legoflow-cli/master/package.json', { timeout: 5000 } ) ).data;
 
         if ( compareVersion( version, nowVersion ) > 0 ) {
             console.log(
@@ -24,6 +24,11 @@ module.exports = async ( ) => {
             )
         }
     } catch ( e ) {
-        console.error( '[CHECK UPDATE ERROR]', e );
+        if ( e.toString().indexOf('timeout') > 0 ) {
+            console.error( '[CHECK UPDATE ERROR]', 'timeout of 5000ms exceeded' );
+        }
+        else {
+            console.error( '[CHECK UPDATE ERROR]', e );
+        }
     }
 };
