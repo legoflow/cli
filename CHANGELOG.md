@@ -2,11 +2,15 @@
 
 * [null]
 
+## 2.0.0-beta.25 (July 6, 2018)
+
+* 更新 Engine [v0.0.44](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0044-july-6-2018)
+
 ## 2.0.0-beta.24 (July 3, 2018)
 
 * 增加 未定义命名错误信息提示
 * 修复 v1 迁移 v2 配置 `hot` 字段
-* 更新 Engine [v0.0.43](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0043-july-7-2018)
+* 更新 Engine [v0.0.43](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0043-july-3-2018)
 
 ## 2.0.0-beta.23 (June 27, 2018)
 

@@ -2,10 +2,6 @@
 
 const path = require('path');
 const net = require('net');
-const findFreePort = require('find-free-port');
-
-const defaultPort = 3100;
-const defaultWebpackPort = 6700;
 
 const localConfig = require('./local_config');
 
@@ -22,32 +18,12 @@ module.exports = async ( flag ) => {
         return void 0;
     }
 
-    const webpackPort = await ( ( ) => {
-        return new Promise( ( resolve, reject ) => {
-            findFreePort( defaultWebpackPort, defaultWebpackPort + 10,  ( err, freePort ) => {
-                resolve( freePort );
-            } );
-        } )
-    } )( );
-
-    if ( !webpackPort ) {
-        console.error( 'can not find free port for webpack.' );
-    }
-
     const { autoOpenChrome, port, user } = localConfig.get( );
 
     config.user = user;
-    config.port = parseInt( port || defaultPort );
-    config.webpackPort = webpackPort;
+    config.port = parseInt( port || 3100 );
+    config.webpackPort = 6700;
     config.autoOpenChrome = typeof autoOpenChrome !== 'undefined' ? autoOpenChrome : true ;
-
-    config.port = await ( ( ) => {
-        return new Promise( ( resolve, reject ) => {
-            findFreePort( config.port, config.port + 10,  ( err, freePort ) => {
-                resolve( freePort );
-            } );
-        } )
-    } )( );
 
     if ( flag === 'dev' ) {
         config.workflow = 'dev';
