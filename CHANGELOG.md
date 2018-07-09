@@ -1,6 +1,11 @@
 ## Unreleased
 
+* [null]
+
+## 2.0.0-beta.26 (July 7, 2018)
+
 * 增加 动态更新超时提示
+* 更新 Engine [v0.0.45](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0045-july-9-2018)
 
 ## 2.0.0-beta.25 (July 6, 2018)
 
