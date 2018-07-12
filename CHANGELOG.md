@@ -1,6 +1,6 @@
 ## Unreleased
 
-* [null]
+* 升级 Project & Config，支持可创建 NPM LegoFlow 模板类型项目
 
 ## 2.0.0-beta.26 (July 7, 2018)
 

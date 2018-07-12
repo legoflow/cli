@@ -1,6 +1,7 @@
 'use strict';
 
 const chalk = require('chalk');
+const ora = require('ora');
 const prompt = require('inquirer').prompt;
 const legoflowProject = require('legoflow-project');
 const getConfig = require('./local_config').get;
@@ -8,7 +9,19 @@ const getConfig = require('./local_config').get;
 const { version: c_version } = require('../package.json');
 
 module.exports = async function ( ) {
-    const types = Object.keys( legoflowProject.getProjectType( ) );
+    let projectTypes = { };
+
+    let spinner = void 0;
+
+    if ( getConfig('loadNPMLegoFlowTemplate') ) {
+        spinner = ora( '正在获取 LegoFlow NPM 模板' ).start();
+    }
+
+    projectTypes = await legoflowProject.getProjectType( );
+
+    spinner && spinner.stop();
+
+    const types = Object.keys( projectTypes );
 
     const toSpace = ( str ) => {
         return str + ( Array( 8 > str.length ? 8 - str.length + 1 || 0 : 0 ).join( ' ' )  );
@@ -97,10 +110,13 @@ module.exports = async function ( ) {
         author: getConfig( 'user' ),
         c_version: `cli@${ c_version }`,
         description,
+        typeSourcePath: projectTypes[ type ],
         from: 'cli',
     }
 
     const result = await legoflowProject.new( options );
+
+    result && result.newProjectSuccessMessage && console.log( result.newProjectSuccessMessage );
 
     typeof result !== 'string'  ? print.success( '新建成功' ) : print.error( result );
 };
