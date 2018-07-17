@@ -1,6 +1,10 @@
 ## Unreleased
 
-* 升级 Project & Config，支持可创建 NPM LegoFlow 模板类型项目
+* [null]
+
+## 2.0.0-beta.27 (July 17, 2018)
+
+* 升级 Project & Config，支持[可创建 NPM LegoFlow 模板类型项目](https://legoflow.com/wiki/#%E8%87%AA%E5%AE%9A%E4%B9%89-npm-%E4%BB%93%E5%BA%93%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B)
 
 ## 2.0.0-beta.26 (July 7, 2018)
 
