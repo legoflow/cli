@@ -36,7 +36,7 @@
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.8",
     "legoflow-engine": "0.0.45",
-    "legoflow-project": "0.0.23",
+    "legoflow-project": "0.0.24",
     "ora": "^2.1.0",
     "shelljs": "^0.7.8",
     "yamljs": "^0.3.0",
