@@ -1,6 +1,6 @@
 ## Unreleased
 
-* [null]
+* 增加 CI 构建指定环境
 
 ## 2.0.0-beta.28 (July 17, 2018)
 

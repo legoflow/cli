@@ -12,12 +12,16 @@ const workflow = require('./core/workflow');
 const { version } = require('./package.json');
 
 ( async ( ) => {
+    const env = process.argv[ 2 ];
+
+    env && console.log( `Env: ${ env }` );
+
     console.log( `CI Version: ${ version }` );
 
     await initEngine( );
 
     console.log( `Engine Init Finish` );
 
-    workflow( );
+    workflow( 'build', env );
 } )( );
 
