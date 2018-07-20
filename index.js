@@ -7,7 +7,6 @@ const chalk = require('chalk');
 
 global.print = require('./core/print');
 
-const initEngine = require('./core/init_engine');
 const checkUpdate = require('./core/check_update');
 const workflow = require('./core/workflow');
 const killPort = require('./core/kill_port');
@@ -59,9 +58,7 @@ global.util = require('legoflow-engine/util');
         .description( chalk.yellow( 'run dev workflow in project' ) )
         .action(
             ( env, cmd ) => {
-                checkUpdate( )
-                    .then( initEngine )
-                    .then( ( ) => workflow( 'dev', env, cmd ) )
+                checkUpdate( ).then( ( ) => workflow( 'dev', env, cmd ) )
             }
         )
 
@@ -71,9 +68,7 @@ global.util = require('legoflow-engine/util');
         .description( chalk.yellow( 'run build workflow in project' ) )
         .action(
             ( env, cmd ) => {
-                checkUpdate( )
-                    .then( initEngine )
-                    .then( ( ) => workflow( 'build', env, cmd ) )
+                checkUpdate( ).then( ( ) => workflow( 'build', env, cmd ) )
             }
         )
 
@@ -82,9 +77,7 @@ global.util = require('legoflow-engine/util');
         .description( chalk.yellow( 'run build dll' ) )
         .action(
             ( cmd ) => {
-                checkUpdate( )
-                    .then( initEngine )
-                    .then( ( ) => workflow( 'dll', void 0, cmd ) )
+                checkUpdate( ).then( ( ) => workflow( 'dll', void 0, cmd ) )
             }
         )
 

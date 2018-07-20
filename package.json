@@ -36,7 +36,7 @@
     "globby": "^8.0.1",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.8",
-    "legoflow-engine": "0.0.47",
+    "legoflow-engine": "0.0.48-beta.2",
     "legoflow-project": "0.0.24",
     "ora": "^2.1.0",
     "shelljs": "^0.7.8",
