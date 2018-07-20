@@ -54,7 +54,7 @@ module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
 
     Messager.sender = ( { type, msg } ) => {
         if ( type === 'success' ) {
-            print.success( flag === 'dev' ? (config.mode === 'webpack' ? `started dev service: http://${ msg.ip }:${ msg.bsPort }` : 'started dev service') : 'build finish' );
+            print.success( flag === 'dev' ? (config.mode === 'webpack' ? `http://${ msg.ip }:${ msg.bsPort }` : 'started dev service') : 'build finish' );
         }
         else {
             sender( { type, msg } );

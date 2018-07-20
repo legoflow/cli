@@ -1,5 +1,10 @@
 ## Unreleased
 
+* [null]
+
+## 2.0.0-beta.28 (July 17, 2018)
+
+* 升级 Engine [v0.0.47](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0047-july-20-2018)
 * 升级 Project，修复新建项目 Vue.js 项目类型脚手架依赖多余模块问题
 * 升级 Project，修复新建项目 “作为源路径” 新建完成时，提示错误问题
 
