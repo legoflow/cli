@@ -6,7 +6,7 @@
 
 * 增加 CI 构建指定环境
 * 升级 Engine [v0.0.48](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0048-july-26-2018)
-    * 通过 npm 安装 cli 的方式，在 Windows 复杂环境下，会导致各类安装失败问题。为了避免这样类似的情况发生，重构 override 重载模块的调用安装方法，适配 [Yarn](https://yarnpkg.com/zh-Hans/) 全局安装策略方式 **`yarn global add legoflow-cli`**
+    * 通过 npm 安装 cli 的方式，在 Windows / Linux 复杂环境下，会导致各类安装失败问题。为了避免这样类似的情况发生，重构 override 重载模块的调用安装方法，适配 [Yarn](https://yarnpkg.com/zh-Hans/) 全局安装策略方式 **`yarn global add legoflow-cli`**
 
 ## 2.0.0-beta.28 (July 17, 2018)
 
