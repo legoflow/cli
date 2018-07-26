@@ -3,18 +3,18 @@
 const axios = require('axios');
 const chalk = require('chalk');
 const boxen = require('boxen');
-const compareVersion = require('compare-versions');
+const semver = require('semver');
 
-const { version: nowVersion } = require('../package.json');
+let { version: nowVersion } = require('../package.json');
 
 module.exports = async ( ) => {
     try {
-        const { version } = (await axios( 'https://raw.githubusercontent.com/legoflow/legoflow-cli/master/package.json', { timeout: 5000 } ) ).data;
+        let { version } = (await axios( 'https://raw.githubusercontent.com/legoflow/legoflow-cli/master/package.json', { timeout: 5000 } ) ).data;
 
-        if ( compareVersion( version, nowVersion ) > 0 ) {
+        if ( semver.gt( version, nowVersion ) > 0 ) {
             console.log(
                 boxen(
-                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update\nView Changelog ${ chalk.bold.yellow.underline( 'http://t.cn/RBXqa7b' ) }` ),
+                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update\nRecommend use ${ chalk.bold.green( 'yarn global add legoflow-cli' ) }\nView Changelog ${ chalk.bold.yellow.underline( 'http://t.cn/RBXqa7b' ) }` ),
                     {
                         padding: { left: 1, right: 1 },
                         borderStyle: 'double',

@@ -42,7 +42,7 @@ module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
 
     const workflowConfig = config[ `workflow.${ flag }` ] || { };
 
-    console.log( `ℹ ｢wdm｣: launching ${ chalk.bold( flag ) }${ workflowConfig && workflowConfig.env ? `, env: ${ chalk.bold.underline( workflowConfig.env ) }` : '' }` );
+    console.log( `Launching ${ chalk.bold( `workflow.${ flag }` ) }${ workflowConfig && workflowConfig.env ? `, env: ${ chalk.bold.underline( workflowConfig.env ) }` : '' }` );
 
     typeof config.friendlyErrors === 'undefined' && ( config.friendlyErrors = true );
 
