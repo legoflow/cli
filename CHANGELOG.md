@@ -2,7 +2,21 @@
 
 * [null]
 
-## 2.0.0-beta.28 (July 26, 2018)
+## 2.0.0-beta.30 (August 3, 2018)
+
+* 升级 Engine [v0.0.49](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0049-august-3-2018)
+* 优化 初始化项目类型 ( Vue.js / Vue.ts )
+    * 默认增加 npm scripts
+        * `npm run eslint` 检查 src 文件夹下代码 eslint 规范
+        * `npm run eslint:fix` 修复 src 文件夹下代码 eslint 规范
+    * 默认加入低版本 Android 兼容方案
+        * 暴露全局 Promise
+        * 配置 webpack{ VueChunkStyle: false }
+    * 默认将 var.scss 配置为全局作用域
+        * webpack{ sass.globalResources: [ ./src/style/var.scss ] }
+        * 再无需在 vue 文件 style 标签下 `@import "~var.scss"`
+
+## 2.0.0-beta.29 (July 26, 2018)
 
 * 增加 CI 构建指定环境
 * 升级 Engine [v0.0.48](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0048-july-26-2018)
