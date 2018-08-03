@@ -5,7 +5,7 @@ const chalk = require('chalk');
 
 const buildConfig = require('./build_config');
 
-module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
+module.exports = async ( flag = 'build', env = '', cmd = { }, from ) => {
     const config = await buildConfig( flag );
 
     if ( !config ) {
@@ -46,7 +46,7 @@ module.exports = async ( flag = 'build', env = '', cmd = { } ) => {
 
     typeof config.friendlyErrors === 'undefined' && ( config.friendlyErrors = true );
 
-    config.from = 'cli';
+    config.from = from ? from : 'cli';
 
     const Messager = require('legoflow-engine/messager');
 

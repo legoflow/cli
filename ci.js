@@ -17,6 +17,6 @@ const { version } = require('./package.json');
 
     console.log( `CI Version: ${ version }` );
 
-    workflow( 'build', env );
+    workflow( 'build', env, {}, 'ci' );
 } )( );
 
