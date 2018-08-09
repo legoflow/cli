@@ -1,6 +1,6 @@
 ## Unreleased
 
-* [null]
+* 增加 标识 `from:ci`，方便可从 Shell 模块中通过该字段判断通过 CI 构建
 
 ## 2.0.0-beta.30 (August 3, 2018)
 
