@@ -1,6 +1,7 @@
 ## Unreleased
 
 * 增加 标识 `from:ci`，方便可从 Shell 模块中通过该字段判断通过 CI 构建
+* 升级 Engine [v0.0.50](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0050-august-9-2018)
 
 ## 2.0.0-beta.30 (August 3, 2018)
 
