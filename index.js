@@ -43,6 +43,11 @@ global.util = require('legoflow-engine/util');
         .action( localConfig.clean )
 
     program
+        .command( 'path' )
+        .description( 'install path' )
+        .action( () => console.log(__dirname) )
+
+    program
         .command( 'migrate:v2' )
         .description( 'migrate project to v2' )
         .action( require('./core/migrate_v2') )
