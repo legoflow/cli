@@ -35,7 +35,7 @@
     "globby": "^8.0.1",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.8",
-    "legoflow-engine": "0.0.50",
+    "legoflow-engine": "0.0.51-beta.4",
     "legoflow-project": "0.0.26",
     "ora": "^2.1.0",
     "semver": "^5.5.0",

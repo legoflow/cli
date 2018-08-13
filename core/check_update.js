@@ -14,7 +14,7 @@ module.exports = async ( ) => {
         if ( semver.gt( version, nowVersion ) > 0 ) {
             console.log(
                 boxen(
-                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update\nRecommend use ${ chalk.bold.green( 'yarn global add legoflow-cli' ) }\nView Changelog ${ chalk.bold.yellow.underline( 'http://t.cn/RBXqa7b' ) }` ),
+                    chalk.yellow( `Update available ${ nowVersion } → ${ chalk.bold.yellow.underline( version ) }\nRun ${ chalk.bold.green( 'npm i -g legoflow-cli' ) } to update\nRecommend use ${ chalk.bold.green( 'yarn global add legoflow-cli' ) }\nView Changelog ${ chalk.bold.yellow.underline( 'https://git.io/fNQgF' ) }` ),
                     {
                         padding: { left: 1, right: 1 },
                         borderStyle: 'double',
