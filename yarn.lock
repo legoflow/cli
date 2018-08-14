@@ -729,9 +729,9 @@
   version "10.5.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
 
-"@vue/component-compiler-utils@^1.2.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-1.3.1.tgz#686f0b913d59590ae327b2a1cb4b6d9b931bbe0e"
+"@vue/component-compiler-utils@^2.0.0":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-2.1.2.tgz#75e7cc8496baecbb0994dc8783571d9ff07737fe"
   dependencies:
     consolidate "^0.15.1"
     hash-sum "^1.0.2"
@@ -739,7 +739,7 @@
     merge-source-map "^1.1.0"
     postcss "^6.0.20"
     postcss-selector-parser "^3.1.1"
-    prettier "^1.13.0"
+    prettier "1.13.7"
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
@@ -6298,13 +6298,13 @@ legoflow-config@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-0.0.7.tgz#af8387573ab6b196f35170334454f5564bcd712b"
 
-legoflow-config@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-0.0.8.tgz#7b5dfab002ab61f479c1dcfba17c7d34afe25833"
+legoflow-config@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-0.0.9.tgz#5b06cf8de2c09ff93b8fe19bc118fdc188a0ef8d"
 
-legoflow-engine@0.0.51-beta.4:
-  version "0.0.51-beta.4"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-0.0.51-beta.4.tgz#e96ee2a0e0c50e77c65e11a3250fd686eb865920"
+legoflow-engine@0.0.51-beta.5:
+  version "0.0.51-beta.5"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-0.0.51-beta.5.tgz#4722d066ae471bbfed87b68f9d3044c533250696"
   dependencies:
     "@babel/core" "7.0.0-rc.1"
     "@babel/plugin-proposal-class-properties" "7.0.0-rc.1"
@@ -6399,16 +6399,16 @@ legoflow-engine@0.0.51-beta.4:
     typescript-eslint-parser "17.0.1"
     url-loader "1.0.1"
     useref "git+https://github.com/legoflow-override/useref.git"
-    vue-loader "15.2.4"
+    vue-loader "15.3.0"
     vue-template-compiler "2.5.16"
     webpack "4.16.1"
     webpack-dev-server "3.1.4"
     webpackbar "git+https://github.com/legoflow-override/webpackbar.git"
     yamljs "^0.3.0"
 
-legoflow-project@0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/legoflow-project/-/legoflow-project-0.0.26.tgz#a5762f239093e75e3eb75fccb3afdd6ef0076318"
+legoflow-project@0.0.27:
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/legoflow-project/-/legoflow-project-0.0.27.tgz#03e3476bfd0f5574d1c28ff85b10765d570d0a9d"
   dependencies:
     axios "^0.18.0"
     chalk "^2.4.1"
@@ -8577,9 +8577,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.13.0:
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.2.tgz#0ac1c6e1a90baa22a62925f41963c841983282f9"
+prettier@1.13.7:
+  version "1.13.7"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -10876,11 +10876,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
 
-vue-loader@15.2.4:
-  version "15.2.4"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.2.4.tgz#a7b923123d3cf87230a8ff54a1c16d31a6c5dbb4"
+vue-loader@15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.3.0.tgz#b474d10a4e93d934a78c147fc3e314b370e9fc54"
   dependencies:
-    "@vue/component-compiler-utils" "^1.2.1"
+    "@vue/component-compiler-utils" "^2.0.0"
     hash-sum "^1.0.2"
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"

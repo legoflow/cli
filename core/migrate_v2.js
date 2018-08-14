@@ -1,110 +1,109 @@
-'use strict';
+'use strict'
 
-const path = require('path');
-const fs = require('fs-extra');
-const YAML = require('yamljs');
-const formatYamlFile = require('format-yaml');
-const { version: cliVersion } = require('../package.json');
+const path = require('path')
+const fs = require('fs-extra')
+const YAML = require('yamljs')
+const formatYamlFile = require('format-yaml')
+const { version: cliVersion } = require('../package.json')
 
 const CONFIG_MAPPING = {
-    name: 'name',
-    type: 'type',
-    es6: 'ES.Next',
-    hot: '$workflow.dev$hot.reload',
-    alias: 'alias',
-    global: 'global',
-    externals: 'externals',
-    watch: '$workflow.dev$watch.reload',
-    assets: '$workflow.build$html.resourcesDomain',
-    packImgSize: '$workflow.build$bundle.limitImgSize',
-    shell: '$workflow.build$shell',
-    'build.env': '$workflow.build$env',
-    'user.dev.args': '$workflow.dev$user.args',
-    'user.build.args': '$workflow.build$user.args',
-    'assets.css': '$workflow.build$css.resourcesDomain',
-    'onlyRunShell': '$workflow.build$onlyRunShell',
-    publicPath: '$workflow.build$publicPath',
+  name: 'name',
+  type: 'type',
+  es6: 'ES.Next',
+  hot: '$workflow.dev$hot.reload',
+  alias: 'alias',
+  global: 'global',
+  externals: 'externals',
+  watch: '$workflow.dev$watch.reload',
+  assets: '$workflow.build$html.resourcesDomain',
+  packImgSize: '$workflow.build$bundle.limitImgSize',
+  shell: '$workflow.build$shell',
+  'build.env': '$workflow.build$env',
+  'user.dev.args': '$workflow.dev$user.args',
+  'user.build.args': '$workflow.build$user.args',
+  'assets.css': '$workflow.build$css.resourcesDomain',
+  'onlyRunShell': '$workflow.build$onlyRunShell',
+  publicPath: '$workflow.build$publicPath'
 }
 
-module.exports = async function ( ) {
-    const root = process.cwd( );
+module.exports = async function () {
+  const root = process.cwd()
 
-    const legoflowJson = path.resolve( root, 'legoflow.json' );
+  const legoflowJson = path.resolve(root, 'legoflow.json')
 
-    const oldConfig = JSON.parse( fs.readFileSync( legoflowJson, 'utf8' ) );
+  const oldConfig = JSON.parse(fs.readFileSync(legoflowJson, 'utf8'))
 
-    let newConfig = { };
+  let newConfig = { }
 
-    const transform = ( _old ) => {
-        let _new = { };
+  const transform = (_old) => {
+    let _new = { }
 
-        for ( let attr in CONFIG_MAPPING ) {
-            if (
-                ( _old[ attr ] && typeof _old[ attr ] === 'array' && _old[ attr ].length > 0 ) ||
-                ( _old[ attr ] && typeof _old[ attr ] === 'string' ) ||
-                ( _old[ attr ] && typeof _old[ attr ] === 'object' && Object.keys( _old[ attr ] ).length > 0 ) ||
-                ( typeof _old[ attr ] === 'boolean' )
-            ) {
-                const value = _old[ attr ];
+    for (let attr in CONFIG_MAPPING) {
+      if (
+        (_old[ attr ] && Array.isArray(_old[ attr ]) && _old[ attr ].length > 0) ||
+        (_old[ attr ] && typeof _old[ attr ] === 'string') ||
+        (_old[ attr ] && typeof _old[ attr ] === 'object' && Object.keys(_old[ attr ]).length > 0) ||
+        (typeof _old[ attr ] === 'boolean')
+      ) {
+        const value = _old[ attr ]
 
-                let newAttr = CONFIG_MAPPING[ attr ];
+        let newAttr = CONFIG_MAPPING[ attr ]
 
-                if ( newAttr.indexOf( '$' ) === 0 ) {
-                    newAttr = newAttr.split( '$' ).filter( ( k ) => k != '' );
+        if (newAttr.indexOf('$') === 0) {
+          newAttr = newAttr.split('$').filter((k) => k != '')
 
-                    if ( !_new[ newAttr[ 0 ] ] ) {
-                        _new[ newAttr[ 0 ] ] = { };
-                    }
+          if (!_new[ newAttr[ 0 ] ]) {
+            _new[ newAttr[ 0 ] ] = { }
+          }
 
-                    _new[ newAttr[ 0 ] ][ newAttr[ 1 ] ] = value;
-                }
-                else {
-                    _new[ newAttr ] = value;
-                }
-
-                if ( attr === 'type' ) {
-                    _new.version = `cli-migrate@v2${ cliVersion }`;
-
-                    _new.REM = value === 'mobile' ? true : false;
-                }
-            }
+          _new[ newAttr[ 0 ] ][ newAttr[ 1 ] ] = value
+        } else {
+          _new[ newAttr ] = value
         }
 
-        return _new;
-    }
+        if (attr === 'type') {
+          _new.version = `cli-migrate@v2${cliVersion}`
 
-    // default config
-    newConfig = transform( oldConfig );
-
-    if ( oldConfig.env ) {
-        newConfig.env = { };
-
-        for ( let env in oldConfig.env ) {
-            newConfig.env[ env ] = transform( oldConfig.env[ env ] );
+          _new.REM = value === 'mobile'
         }
+      }
     }
 
-    const newConfigFile = path.resolve( root, 'legoflow.yml' );
+    return _new
+  }
 
-    let yamlString = YAML.stringify( newConfig, 4 );
+  // default config
+  newConfig = transform(oldConfig)
 
-    const reg = /'''.\S*'''/g;
+  if (oldConfig.env) {
+    newConfig.env = { }
 
-    const match = yamlString.match( reg ) || [ ];
-
-    if ( match && match.length > 0 ) {
-        const matchValue = match.map( ( v ) => ( v.split( '\'\'\'' ).filter( v => v !== '' ) )[ 0 ] );
-
-        matchValue.forEach( ( item, index ) => {
-            yamlString = yamlString.replace( `'''${ item }'''`, `"'${ item }'"` );
-        } );
+    for (let env in oldConfig.env) {
+      newConfig.env[ env ] = transform(oldConfig.env[ env ])
     }
+  }
 
-    fs.writeFileSync( newConfigFile, yamlString );
+  const newConfigFile = path.resolve(root, 'legoflow.yml')
 
-    fs.writeFileSync( newConfigFile, await formatYamlFile( newConfigFile ) );
+  let yamlString = YAML.stringify(newConfig, 4)
 
-    fs.renameSync( legoflowJson, path.resolve( root, 'legoflow.v1.json' ) );
+  const reg = /'''.\S*'''/g
 
-    print.success( 'migrate success' );
-};
+  const match = yamlString.match(reg) || [ ]
+
+  if (match && match.length > 0) {
+    const matchValue = match.map((v) => (v.split('\'\'\'').filter(v => v !== ''))[ 0 ])
+
+    matchValue.forEach((item, index) => {
+      yamlString = yamlString.replace(`'''${item}'''`, `"'${item}'"`)
+    })
+  }
+
+  fs.writeFileSync(newConfigFile, yamlString)
+
+  fs.writeFileSync(newConfigFile, await formatYamlFile(newConfigFile))
+
+  fs.renameSync(legoflowJson, path.resolve(root, 'legoflow.v1.json'))
+
+  global.print.success('migrate success')
+}
