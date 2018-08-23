@@ -1,22 +1,19 @@
 #!/usr/bin/env node
 
-'use strict';
+'use strict'
 
-console.log( 'Enter CI' );
+console.log('Enter CI')
 
-global.print = require('./core/print');
-global.util = require('legoflow-engine/util');
+global.print = require('./core/print')
+global.util = require('legoflow-engine/util')
 
-const workflow = require('./core/workflow');
-const { version } = require('./package.json');
+const workflow = require('./core/workflow')
+const { version } = require('./package.json')
 
-( async ( ) => {
-    const env = process.argv[ 2 ];
+const env = process.argv[ 2 ]
 
-    env && console.log( `Env: ${ env }` );
+env && console.log(`Env: ${env}`)
 
-    console.log( `CI Version: ${ version }` );
+console.log(`CI Version: ${version}`)
 
-    workflow( 'build', env, {}, 'ci' );
-} )( );
-
+workflow('build', env, {}, 'ci')

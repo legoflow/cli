@@ -23,26 +23,27 @@
 
 ## 安装
 
-```
+```shell
 npm i legoflow-cli -g
+
+# 推荐使用 yarn 安装
+yarn global install legoflow-cli
 ```
 
 ## 使用
 
 ### 查看命令
 
-```
+```shell
 legoflow -h
 
+# 使用简写
 lf -h
 ```
 
 ### 新建项目
 
 ```shell
-legoflow init
-
-# 使用简写
 lf init
 ```
 
@@ -69,7 +70,7 @@ cd test
 
 lf build
 
-# 可选择环境
+# 选择环境
 lf build --env
 
 # 可指定环境
