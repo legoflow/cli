@@ -8,12 +8,28 @@ const getConfig = require('./local_config').get
 
 const { version: cVersion } = require('../package.json')
 
-module.exports = async function () {
+module.exports = async function (options) {
+  typeof options.name === 'function' && (options.name = undefined)
+  typeof options.type === 'function' && (options.type = undefined)
+  typeof options.version === 'function' && (options.version = undefined)
+  typeof options.description === 'function' && (options.description = undefined)
+  typeof options.isSourcePath === 'function' && (options.isSourcePath = undefined)
+
+  if (options.name && !options.type) {
+    global.print.error('缺少 type 配置')
+    process.exit(1)
+  }
+
+  if (!options.name && options.type) {
+    global.print.error('缺少 name 配置')
+    process.exit(1)
+  }
+
   let projectTypes = { }
 
   let spinner = void 0
 
-  if (getConfig('loadNPMLegoFlowTemplate')) {
+  if (!options.name && !options.type && getConfig('loadNPMLegoFlowTemplate')) {
     spinner = ora('正在获取 LegoFlow NPM 模板').start()
   }
 
@@ -22,6 +38,11 @@ module.exports = async function () {
   spinner && spinner.stop()
 
   const types = Object.keys(projectTypes)
+
+  if (options.type && types.indexOf(options.type) < 0) {
+    global.print.error('找不到该项目类型')
+    process.exit(1)
+  }
 
   const toSpace = (str) => {
     return str + (Array(str.length < 8 ? 8 - str.length + 1 || 0 : 0).join(' '))
@@ -100,16 +121,27 @@ module.exports = async function () {
     }
   ]
 
-  const { name, type, version, description, isSourcePath } = await prompt(questions)
+  let name = options.name || ''
+  let type = options.type || ''
+  let version = options.version || '0.0.1'
+  let description = options.description || ''
+  let isSourcePath = options.isSourcePath == 'true' || false
 
-  const isESNext = true
+  if (!options.name && !options.type) {
+    const answers = await prompt(questions)
+    name = answers.name
+    type = answers.type
+    version = answers.version
+    description = answers.description
+    isSourcePath = answers.isSourcePath
+  }
 
-  const options = {
+  const newProjectOptions = {
     path: process.cwd(),
     name,
     type,
     version,
-    isESNext,
+    isESNext: true,
     isSourcePath,
     author: getConfig('user'),
     c_version: `cli@${cVersion}`,
@@ -118,7 +150,7 @@ module.exports = async function () {
     from: 'cli'
   }
 
-  const result = await legoflowProject.new(options)
+  const result = await legoflowProject.new(newProjectOptions)
 
   result && result.newProjectSuccessMessage && console.log(result.newProjectSuccessMessage)
 

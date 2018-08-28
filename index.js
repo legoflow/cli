@@ -24,6 +24,10 @@ global.util = require('legoflow-engine/util');
 
   program
     .command('init')
+    .option('--name <name>')
+    .option('--type <type>')
+    .option('--description <description>')
+    .option('--isSourcePath <isSourcePath>')
     .description('init new project')
     .action(require('./core/new_project'))
 
