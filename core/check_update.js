@@ -5,11 +5,13 @@ const chalk = require('chalk')
 const boxen = require('boxen')
 const semver = require('semver')
 
-let { version: nowVersion } = require('../package.json')
+const { version: nowVersion } = require('../package.json')
 
-module.exports = async () => {
+module.exports = async (options) => {
   try {
-    let { version } = (await axios('https://raw.githubusercontent.com/legoflow/legoflow-cli/master/package.json', { timeout: 5000 })).data
+    const cnpmInfo = (await axios('https://registry.npm.taobao.org/legoflow-cli', { timeout: 5000 })).data
+
+    const version = cnpmInfo['dist-tags']['latest']
 
     if (semver.gt(version, nowVersion) > 0) {
       console.log(
@@ -22,6 +24,8 @@ module.exports = async () => {
           }
         )
       )
+    } else if (options) {
+      console.log(`The latest version: ${chalk.bold.yellow(version)}`)
     }
   } catch (e) {
     if (e.toString().indexOf('timeout') > 0) {

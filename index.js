@@ -58,6 +58,11 @@ global.util = require('legoflow-engine/util');
     .action(killPort)
 
   program
+    .command('check:update')
+    .description('check update')
+    .action(checkUpdate)
+
+  program
     .command('dev [env]')
     .option('-e, --env', 'env list')
     .description(chalk.yellow('run dev workflow in project'))
