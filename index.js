@@ -32,6 +32,11 @@ global.util = require('legoflow-engine/util');
     .action(require('./core/new_project'))
 
   program
+    .command('init:type')
+    .description('get init project type')
+    .action(require('./core/new_project_type'))
+
+  program
     .command('set <name> <value>')
     .description('set config <name> <value>')
     .action(localConfig.set)
