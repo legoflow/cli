@@ -3,7 +3,9 @@
   "version": "2.0.0-beta.31",
   "description": "legoflow cli",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "yarn:install": "yarn install --ignore-engines"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/legoflow/legoflow-cli.git"
@@ -34,8 +36,8 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "0.0.9",
-    "legoflow-engine": "0.0.51-beta.14",
-    "legoflow-project": "0.0.27",
+    "legoflow-engine": "0.0.51-beta.15",
+    "legoflow-project": "0.0.28",
     "ora": "^2.1.0",
     "semver": "^5.5.0",
     "shelljs": "^0.7.8",
