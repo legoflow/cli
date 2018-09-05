@@ -2,9 +2,14 @@
 
 * [null]
 
+## 2.0.1 (September 5, 2018)
+
+* 更新 Engine [v0.0.53](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0053-september-5-2018)
+    * 修复 JS 复合使用模块导出语法问题
+
 ## 2.0.0 (September 5, 2018)
 
-* 更新 Engine [v0.0.51](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0052-september-5-2018)
+* 更新 Engine [v0.0.52](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0052-september-5-2018)
     * 主要更新 Babel@7.0.0
 * 增加 新建项目参数
 * 增加 可获取新建项目类型

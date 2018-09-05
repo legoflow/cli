@@ -1318,9 +1318,9 @@ babel-helper-vue-jsx-merge-props@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
 
-babel-loader@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.0.tgz#c42f2bef268d0d8bb4ceec5d02b540a9055d58a0"
+babel-loader@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.2.tgz#2079b8ec1628284a929241da3d90f5b3de2a5ae5"
   dependencies:
     find-cache-dir "^1.0.0"
     loader-utils "^1.0.2"
@@ -6307,9 +6307,9 @@ legoflow-config@0.0.9:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-0.0.9.tgz#5b06cf8de2c09ff93b8fe19bc118fdc188a0ef8d"
 
-legoflow-engine@0.0.51-beta.15:
-  version "0.0.51-beta.15"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-0.0.51-beta.15.tgz#51ae0effc8daa1497645d7880f8c5118c84eeaf9"
+legoflow-engine@0.0.53-beta.1:
+  version "0.0.53-beta.1"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-0.0.53-beta.1.tgz#2b59ac4220aca829fea3236f89cdbe245e51087a"
   dependencies:
     "@babel/core" "7.0.0"
     "@babel/plugin-proposal-class-properties" "7.0.0"
@@ -6327,7 +6327,7 @@ legoflow-engine@0.0.51-beta.15:
     axios "^0.18.0"
     babel-eslint "9.0.0"
     babel-helper-vue-jsx-merge-props "2.0.3"
-    babel-loader "8.0.0"
+    babel-loader "8.0.2"
     babel-plugin-syntax-jsx "6.18.0"
     babel-plugin-transform-vue-jsx "4.0.1"
     browser-sync "2.7.0"
