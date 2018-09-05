@@ -2,6 +2,13 @@
 
 * [null]
 
+## 2.0.0 (September 5, 2018)
+
+* 更新 Engine [v0.0.51](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0052-september-5-2018)
+    * 主要更新 Babel@7.0.0
+* 增加 新建项目参数
+* 增加 可获取新建项目类型
+
 ## 2.0.0-beta.31 (August 10, 2018)
 
 * 增加 **`lf path`** 查询安装觉得路径
