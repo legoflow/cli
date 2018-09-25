@@ -2,6 +2,11 @@
 
 * [null]
 
+## 2.0.2 (September 25, 2018)
+
+* 更新 Engine [v1.0.1](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#101-september-25-2018)
+    * 修复构建 dll 工作流缺少扩展通用配置问题
+
 ## 2.0.1 (September 5, 2018)
 
 * 更新 Engine [v0.0.53](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0053-september-5-2018)
