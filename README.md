@@ -26,8 +26,9 @@
 ```shell
 npm i legoflow-cli -g
 
+# or
 # 推荐使用 yarn 安装
-yarn global install legoflow-cli
+yarn global add legoflow-cli
 ```
 
 ## 使用
