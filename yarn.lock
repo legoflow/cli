@@ -6496,9 +6496,9 @@ legoflow-config@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-1.0.0.tgz#d9e84e4207e041406bdddb2a9e65f1f816f79348"
 
-legoflow-engine@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.5.0.tgz#f49eb5324298c36f70f59eb67c9fe5f01a509d8d"
+legoflow-engine@1.6.0-beta.4:
+  version "1.6.0-beta.4"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.6.0-beta.4.tgz#7b7f10eaf1741c3df53efc3f1954b37ac0d4797e"
   dependencies:
     "@babel/core" "7.1.2"
     "@babel/plugin-proposal-class-properties" "7.1.0"
@@ -6600,9 +6600,9 @@ legoflow-engine@1.5.0:
     webpackbar "git+https://github.com/legoflow-override/webpackbar.git"
     yamljs "^0.3.0"
 
-legoflow-project@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/legoflow-project/-/legoflow-project-1.0.0.tgz#f4e33e2e381ce8b254688d1af301247e780c410c"
+legoflow-project@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/legoflow-project/-/legoflow-project-1.1.0.tgz#41d1c56dd3af3e2d39f42ea8e68a10b0106d86c3"
   dependencies:
     axios "^0.18.0"
     chalk "^2.4.1"

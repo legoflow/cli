@@ -141,7 +141,6 @@ module.exports = async function (options) {
     name,
     type,
     version,
-    isESNext: true,
     isSourcePath,
     author: getConfig('user'),
     c_version: `cli@${cVersion}`,
