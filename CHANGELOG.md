@@ -17,17 +17,17 @@
 ## 2.0.2 (09-25, 2018)
 
 * 更新 Engine [v1.0.1](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#101-09-25-2018)
-    * 修复构建 dll 工作流缺少扩展通用配置问题
+  * 修复构建 dll 工作流缺少扩展通用配置问题
 
 ## 2.0.1 (09-05, 2018)
 
 * 更新 Engine [v0.0.53](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0053-09-5-2018)
-    * 修复 JS 复合使用模块导出语法问题
+  * 修复 JS 复合使用模块导出语法问题
 
 ## 2.0.0 (09-05, 2018)
 
 * 更新 Engine [v0.0.52](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0052-09-5-2018)
-    * 主要更新 Babel@7.0.0
+  * 主要更新 Babel@7.0.0
 * 增加 新建项目参数
 * 增加 可获取新建项目类型
 * 优化 版本检查改为通过 CNPM 源，加速获取新版本数据
@@ -42,21 +42,21 @@
 
 * 升级 Engine [v0.0.49](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0049-08-03-2018)
 * 优化 初始化项目类型 ( Vue.js / Vue.ts )
-    * 默认增加 npm scripts
-        * `npm run eslint` 检查 src 文件夹下代码 eslint 规范
-        * `npm run eslint:fix` 修复 src 文件夹下代码 eslint 规范
-    * 默认加入低版本 Android 兼容方案
-        * 暴露全局 Promise
-        * 配置 webpack{ VueChunkStyle: false }
-    * 默认将 var.scss 配置为全局作用域
-        * webpack{ sass.globalResources: [ ./src/style/var.scss ] }
-        * 再无需在 vue 文件 style 标签下 `@import "~var.scss"`
+  * 默认增加 npm scripts
+    * `npm run eslint` 检查 src 文件夹下代码 eslint 规范
+    * `npm run eslint:fix` 修复 src 文件夹下代码 eslint 规范
+  * 默认加入低版本 Android 兼容方案
+    * 暴露全局 Promise
+    * 配置 webpack{ VueChunkStyle: false }
+  * 默认将 var.scss 配置为全局作用域
+    * webpack{ sass.globalResources: [ ./src/style/var.scss ] }
+    * 再无需在 vue 文件 style 标签下 `@import "~var.scss"`
 
 ## 2.0.0-beta.29 (07-26, 2018)
 
 * 增加 CI 构建指定环境
 * 升级 Engine [v0.0.48](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#0048-07-26-2018)
-    * 通过 npm 安装 cli 的方式，在 Windows / Linux 复杂环境下，会导致各类安装失败问题。为了避免这样类似的情况发生，重构 override 重载模块的调用安装方法，适配 [Yarn](https://yarnpkg.com/zh-Hans/) 全局安装策略方式 **`yarn global add legoflow-cli`**
+  * 通过 npm 安装 cli 的方式，在 Windows / Linux 复杂环境下，会导致各类安装失败问题。为了避免这样类似的情况发生，重构 override 重载模块的调用安装方法，适配 [Yarn](https://yarnpkg.com/zh-Hans/) 全局安装策略方式 **`yarn global add legoflow-cli`**
 
 ## 2.0.0-beta.28 (07-17, 2018)
 
