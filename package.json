@@ -3,9 +3,7 @@
   "version": "2.3.0-beta.1",
   "description": "legoflow cli",
   "main": "index.js",
-  "scripts": {
-    "yarn:install": "yarn install --ignore-engines"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/legoflow/legoflow-cli.git"

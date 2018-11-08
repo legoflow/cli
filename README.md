@@ -1,16 +1,16 @@
 <h1 align="center"> legoflow-cli </h1>
 
 <p align="center">
-    <a href="https://opensource.org/licenses/MIT">
-        <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg" />
-    </a>
-    <a href="">
-        <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-green.svg" />
-    </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg"/>
+  </a>
+  <a href="">
+    <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-green.svg"/>
+  </a>
 </p>
 
 <p align="center">
-    <strong>命令行工具</strong>
+  <strong>命令行工具</strong>
 </p>
 
 ## 最近更新
@@ -78,6 +78,18 @@ lf build --env
 lf build preview
 ```
 
+### CI 构建
+
+```sh
+# 进入 legoflow 项目
+cd test
+
+lf-ci
+
+# 也可构建指定环境 lf-ci [env] 例如：构建测试环境
+lf-ci test
+```
+
 ### 构建 dll
 
 ```shell
@@ -131,6 +143,8 @@ lf:eslint -v
 lf:eslint -h
 lf:eslint ...
 ```
+
+**注意** 2.3 版本后该命令更改为 `lf-eslint`
 
 ## 许可
 
