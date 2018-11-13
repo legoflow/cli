@@ -13,7 +13,7 @@ module.exports = async (options) => {
 
     const version = cnpmInfo['dist-tags']['latest']
 
-    if (semver.gt(version, nowVersion) > 0) {
+    if (version.indexOf('beta') < 0 && semver.gt(version, nowVersion) > 0) {
       console.log(
         boxen(
           chalk.yellow(`Update available ${nowVersion} → ${chalk.bold.yellow.underline(version)}\nRun ${chalk.bold.green('npm i -g legoflow-cli')} to update\nRecommend use ${chalk.bold.green('yarn global add legoflow-cli')}\nView Changelog ${chalk.bold.yellow.underline('https://git.io/fNQgF')}`),

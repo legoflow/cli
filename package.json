@@ -1,6 +1,6 @@
 {
   "name": "legoflow-cli",
-  "version": "2.3.0-beta.1",
+  "version": "2.3.0",
   "description": "legoflow cli",
   "main": "index.js",
   "scripts": {},
@@ -18,9 +18,7 @@
     "lf": "./index.js",
     "legoflow": "./index.js",
     "lf-ci": "./ci.js",
-    "legoflow-ci": "./ci.js",
-    "lf-eslint": "./node_modules/eslint/bin/eslint.js",
-    "legoflow-eslint": "./node_modules/eslint/bin/eslint.js"
+    "lf-eslint": "./node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -34,7 +32,7 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "1.0.0",
-    "legoflow-engine": "1.7.0-beta.3",
+    "legoflow-engine": "1.7.0",
     "legoflow-project": "1.1.0",
     "ora": "^2.1.0",
     "semver": "^5.5.0",
