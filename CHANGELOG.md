@@ -7,9 +7,9 @@
 * 更新 Engine 版本（[v1.6.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#160-11-07-2018) & [v1.7.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#170-11-13-2018)）
 * 修复 个别 Windows 机器安装时无法兼容 bin 名称带冒号问题
   * `lf:eslint` 重名为 `lf-eslint`
-  * `legoflow:eslint` 重名为 `legoflow-eslint`
   * `lf:ci` 重名为 `lf-ci`
-  * `legoflow:ci` 重名为 `legoflow-ci`
+  * 删除 `legoflow:ci`
+  * 删除 `legoflow-eslint`
 
 **注意** 内部构建环境 CI Docker 兼容 `lf:ci`
 
