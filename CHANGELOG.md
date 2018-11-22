@@ -2,6 +2,11 @@
 
 [null]
 
+## 2.4.0 (11-22, 2018)
+
+* 更新 Engine 版本 [1.8.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#180-11-22-2018)
+* 修复 创建 Vue.ts 类型项目报错问题
+
 ## 2.3.0 (11-13, 2018)
 
 * 更新 Engine 版本 [v1.6.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#160-11-07-2018) & [v1.7.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#170-11-13-2018)
