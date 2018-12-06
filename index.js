@@ -7,10 +7,10 @@ const chalk = require('chalk')
 
 global.print = require('./core/print')
 
-const checkUpdate = require('./core/check_update')
+const checkUpdate = require('./core/check-update')
 const workflow = require('./core/workflow')
-const killPort = require('./core/kill_port')
-const localConfig = require('./core/local_config')
+const killPort = require('./core/kill-port')
+const localConfig = require('./core/local-config')
 
 const { version } = require('./package.json')
 
@@ -28,13 +28,14 @@ global.util = require('legoflow-engine/util');
     .option('--type <type>')
     .option('--description <description>')
     .option('--isSourcePath <isSourcePath>')
+    .option('--git <git>')
     .description('init new project')
-    .action(require('./core/new_project'))
+    .action(require('./core/init-project'))
 
   program
     .command('init:type')
     .description('get init project type')
-    .action(require('./core/new_project_type'))
+    .action(require('./core/init-project-type'))
 
   program
     .command('set <name> <value>')
@@ -59,7 +60,7 @@ global.util = require('legoflow-engine/util');
   program
     .command('migrate:v2')
     .description('migrate project to v2')
-    .action(require('./core/migrate_v2'))
+    .action(require('./core/migrate-v2'))
 
   program
     .command('kill:port <port>')

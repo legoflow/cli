@@ -1,6 +1,6 @@
 'use strict'
 
-let config = { }
+let config = {}
 
 // test CI
 // process.env.GITLAB_CI = true;

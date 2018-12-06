@@ -1,10 +1,9 @@
 'use strict'
 
 const chalk = require('chalk')
-const ora = require('ora')
 const prompt = require('inquirer').prompt
 const legoflowProject = require('legoflow-project')
-const getConfig = require('./local_config').get
+const getConfig = require('./local-config').get
 
 const { version: cVersion } = require('../package.json')
 
@@ -25,61 +24,9 @@ module.exports = async function (options) {
     process.exit(1)
   }
 
-  let projectTypes = { }
+  const gitSourcePath = options.git
 
-  let spinner = void 0
-
-  if (!options.name && !options.type && getConfig('loadNPMLegoFlowTemplate')) {
-    spinner = ora('正在获取 LegoFlow NPM 模板').start()
-  }
-
-  projectTypes = await legoflowProject.getProjectType()
-
-  spinner && spinner.stop()
-
-  const types = Object.keys(projectTypes)
-
-  if (options.type && types.indexOf(options.type) < 0) {
-    global.print.error('找不到该项目类型')
-    process.exit(1)
-  }
-
-  const toSpace = (str) => {
-    return str + (Array(str.length < 8 ? 8 - str.length + 1 || 0 : 0).join(' '))
-  }
-
-  types.forEach((item, index) => {
-    switch (item) {
-      case 'Vue.js': {
-        types[ index ] = {
-          name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- Vue.js 项目基础模板')}`,
-          value: item
-        }
-        break
-      }
-      case 'Vue.ts': {
-        types[ index ] = {
-          name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- Vue.js 项目 TypeScript 模板')}`,
-          value: item
-        }
-        break
-      }
-      case 'PC': {
-        types[ index ] = {
-          name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- PC 端项目模板')}`,
-          value: item
-        }
-        break
-      }
-      case 'Mobile': {
-        types[ index ] = {
-          name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- 移动端项目模板')}`,
-          value: item
-        }
-        break
-      }
-    }
-  })
+  let projectTypes = {}
 
   let questions = [
     {
@@ -92,13 +39,6 @@ module.exports = async function (options) {
 
         !input ? done('项目名称不能为空') : done(null, true)
       }
-    },
-    {
-      type: 'list',
-      name: 'type',
-      message: '项目类型',
-      choices: types,
-      default: 0
     },
     {
       type: 'input',
@@ -120,6 +60,60 @@ module.exports = async function (options) {
       default: 0
     }
   ]
+
+  if (!gitSourcePath) {
+    projectTypes = legoflowProject.getProjectType()
+
+    const types = Object.keys(projectTypes)
+
+    if (options.type && types.indexOf(options.type) < 0) {
+      global.print.error('找不到该项目类型')
+      process.exit(1)
+    }
+
+    const toSpace = str => str + (Array(str.length < 8 ? 8 - str.length + 1 || 0 : 0).join(' '))
+
+    types.forEach((item, index) => {
+      switch (item) {
+        case 'Vue.js': {
+          types[ index ] = {
+            name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- Vue.js 项目基础模板')}`,
+            value: item
+          }
+          break
+        }
+        case 'Vue.ts': {
+          types[ index ] = {
+            name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- Vue.js 项目 TypeScript 模板')}`,
+            value: item
+          }
+          break
+        }
+        case 'PC': {
+          types[ index ] = {
+            name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- PC 端项目模板')}`,
+            value: item
+          }
+          break
+        }
+        case 'Mobile': {
+          types[ index ] = {
+            name: `${chalk.bold(toSpace(item))}${chalk.whiteBright('- 移动端项目模板')}`,
+            value: item
+          }
+          break
+        }
+      }
+    })
+
+    questions.splice(1, 0, {
+      type: 'list',
+      name: 'type',
+      message: '项目类型',
+      choices: types,
+      default: 0
+    })
+  }
 
   let name = options.name || ''
   let type = options.type || ''
@@ -145,7 +139,8 @@ module.exports = async function (options) {
     author: getConfig('user'),
     c_version: `cli@${cVersion}`,
     description,
-    typeSourcePath: projectTypes[ type ],
+    typeSourcePath: projectTypes[type],
+    gitSourcePath,
     from: 'cli'
   }
 

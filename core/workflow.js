@@ -3,7 +3,7 @@
 const prompt = require('inquirer').prompt
 const chalk = require('chalk')
 
-const buildConfig = require('./build_config')
+const buildConfig = require('./build-config')
 
 module.exports = async (flag = 'build', env = '', cmd = { }, from = 'cli') => {
   const config = await buildConfig(flag)

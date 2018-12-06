@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const localConfig = require('./local_config')
+const localConfig = require('./local-config')
 
 module.exports = async (flag) => {
   const projectPath = process.cwd()
