@@ -2,6 +2,12 @@
 
 [null]
 
+## 2.5.0 (12-07, 2018)
+
+* 更新 Engine 版本 [1.9.1](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#191-12-07-2018)
+* 删除 NPM、本地目录等第三方创建项目方式
+* 增加 通过 Git 源创建项目方法（[详细](https://legoflow.com/wiki/#%E8%87%AA%E5%AE%9A%E4%B9%89-git-%E6%BA%90%E4%BB%93%E5%BA%93%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B-cli-v2-5)）
+
 ## 2.4.0 (11-22, 2018)
 
 * 更新 Engine 版本 [1.8.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#180-11-22-2018)

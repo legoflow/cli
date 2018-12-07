@@ -6751,9 +6751,9 @@ legoflow-config@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-1.0.0.tgz#d9e84e4207e041406bdddb2a9e65f1f816f79348"
 
-legoflow-engine@1.9.0-beta.3:
-  version "1.9.0-beta.3"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.9.0-beta.3.tgz#3d850e6af3511bd68fbdb9d7540fb278a9e28821"
+legoflow-engine@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.9.1.tgz#6d7cd9e446314f375366cc50af8f1f0b7c6e5ac6"
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-proposal-class-properties" "7.1.0"
