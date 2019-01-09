@@ -2,6 +2,10 @@
 
 [null]
 
+## 2.6.0 (01-09, 2019)
+
+* 更新 Engine 版本 [1.10.0](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#1100-01-09-2019)
+
 ## 2.5.0 (12-07, 2018)
 
 * 更新 Engine 版本 [1.9.1](https://github.com/legoflow/engine/blob/master/CHANGELOG.md#191-12-07-2018)
