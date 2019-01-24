@@ -5629,9 +5629,9 @@ html-entities@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
 
-html-inject-assets-webpack-plugin@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/html-inject-assets-webpack-plugin/-/html-inject-assets-webpack-plugin-0.0.1.tgz#147df0a9eade647f86551718e600a91ec5dbaf43"
+html-inject-assets-webpack-plugin@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/html-inject-assets-webpack-plugin/-/html-inject-assets-webpack-plugin-0.0.2.tgz#2b7ba4fd95b746ed6e3ea65091fd688043ce6c8c"
   dependencies:
     axios "^0.18.0"
 
@@ -6745,9 +6745,9 @@ legoflow-config@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-1.0.0.tgz#d9e84e4207e041406bdddb2a9e65f1f816f79348"
 
-legoflow-engine@1.10.0-beta.1:
-  version "1.10.0-beta.1"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.10.0-beta.1.tgz#3bd46d28e9ed222678157e73896b41305ea653ce"
+legoflow-engine@1.11.0-2:
+  version "1.11.0-2"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.11.0-2.tgz#e669192ed90d5801c983e1da4a52b3f8be8cea9c"
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-proposal-class-properties" "7.1.0"
@@ -6816,7 +6816,7 @@ legoflow-engine@1.10.0-beta.1:
     gulp-util "3.0.8"
     gulp-watch "4.3.8"
     happypack "5.0.0"
-    html-inject-assets-webpack-plugin "0.0.1"
+    html-inject-assets-webpack-plugin "0.0.2"
     html-loader "0.5.5"
     html-webpack-include-assets-plugin "1.0.4"
     html-webpack-plugin "3.2.0"
