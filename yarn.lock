@@ -7476,10 +7476,10 @@ legoflow-config@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-1.0.0.tgz#d9e84e4207e041406bdddb2a9e65f1f816f79348"
 
-legoflow-engine@1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.11.3.tgz#e227b1b0b5dc19f6d7098e94e0eed98d9b46aa79"
-  integrity sha512-mNhNsK7XsJ2rQXtCfOZLKZX2hFW3B/CvZRC4Mc0Du1OuTN+b1WGKFtIMZ3FvP/cOBWRpeJHHlHq6kM6YriiCLg==
+legoflow-engine@1.11.4:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/legoflow-engine/-/legoflow-engine-1.11.4.tgz#09cef3dde54de9948867151e59c89b5e0d2a03ad"
+  integrity sha512-TB1XcHMNje0KEFiCojCXXraaLsQ2eEX+aNKCkhwLgOIrAyPAnWYz+kiTvZWx/AcV9zJc8uvMlf/Gi8re+M4v+Q==
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/plugin-proposal-class-properties" "7.1.0"
