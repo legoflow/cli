@@ -7433,6 +7433,15 @@ jpeg-js@^0.3.2:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.5.tgz#6fbd6cd0e49627c5a0341796c9e50c70a2aa3673"
 
+jpegtran-bin@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/jpegtran-bin/-/jpegtran-bin-3.0.0.tgz#2b3da582588b4dcf975e13acac5de0d9479e15ff"
+  integrity sha1-Kz2lgliLTc+XXhOsrF3g2UeeFf8=
+  dependencies:
+    bin-build "^2.0.0"
+    bin-wrapper "^3.0.0"
+    logalot "^2.0.0"
+
 jpegtran-bin@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/jpegtran-bin/-/jpegtran-bin-3.2.0.tgz#f60ecf4ae999c0bdad2e9fbcdf2b6f0981e7a29b"
@@ -7670,10 +7679,10 @@ legoflow-config@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/legoflow-config/-/legoflow-config-1.0.0.tgz#d9e84e4207e041406bdddb2a9e65f1f816f79348"
 
-legoflow-engine@1.11.6:
-  version "1.11.6"
-  resolved "https://registry.npmjs.org/legoflow-engine/-/legoflow-engine-1.11.6.tgz#f037e887b2759db9532ee0fde5d0e15ee35e4500"
-  integrity sha512-QEaWD11MQcW6PTWr0iT97OPHpVH/D6sfviT08URdACsDKOsuani5PyrIPcM1c0OyorndrN8/0BZVmB3EotKn1Q==
+legoflow-engine@1.11.7:
+  version "1.11.7"
+  resolved "https://registry.npmjs.org/legoflow-engine/-/legoflow-engine-1.11.7.tgz#30bb9921e3f246d4b2b6c45e105e06fb561b31a4"
+  integrity sha512-xplsl4YMf10AKtzdUWCxHLWUc4g8dE25MAHzoe5HdTMpUjPDpiKt55WoepEIkHUFelZrF9E2wxaDH8dFsdjpcg==
   dependencies:
     "@babel/core" "7.10.5"
     "@babel/plugin-proposal-class-properties" "7.10.4"
@@ -7749,6 +7758,7 @@ legoflow-engine@1.11.6:
     image-size "0.8.3"
     image-webpack-loader "6.0.0"
     ip "^1.1.5"
+    jpegtran-bin "3.0.0"
     loader-utils "1.2.3"
     lodash "^4.17.15"
     markup-inline-loader "git+https://github.com/legoflow-override/markup-inline-loader.git"

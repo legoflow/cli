@@ -1,6 +1,6 @@
 {
   "name": "legoflow-cli",
-  "version": "2.7.4",
+  "version": "2.7.5",
   "description": "legoflow cli",
   "main": "index.js",
   "scripts": {},
@@ -32,7 +32,7 @@
     "glob": "~7.1.2",
     "inquirer": "^5.2.0",
     "legoflow-config": "1.0.0",
-    "legoflow-engine": "1.11.6",
+    "legoflow-engine": "1.11.7",
     "legoflow-project": "1.2.1",
     "ora": "3.0.0",
     "semver": "^5.5.0",
